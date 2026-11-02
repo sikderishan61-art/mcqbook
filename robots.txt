@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mcqbook.online/sitemap.xml
