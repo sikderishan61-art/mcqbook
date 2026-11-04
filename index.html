@@ -8966,6 +8966,8 @@ ident().then(autoRedeem).then(()=>{sendRef();render();if(PN[1])setTimeout(()=>ms
 .apq-b svg{width:20px;height:20px;flex:none}
 .apq-b small{font-weight:600;opacity:.75;font-size:.78rem}
 .apq-dl{color:#1a1203;background:linear-gradient(135deg,#fde68a,#f59e0b);box-shadow:0 14px 26px -12px #f59e0b}
+.apq-pw{margin-top:.55rem;background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;border:0!important}
+.apq-pws{display:none;margin:.7rem 0 0;padding:.75rem .9rem;border-radius:14px;background:rgba(255,255,255,.08);text-align:left;font-size:.88rem;line-height:1.7;color:#fff}.apq-pws.on{display:block}.apq-pws b{color:#fde68a}
 .apq-br{margin-top:.55rem;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)!important}
 .apq-ig{margin-top:.55rem;color:#fff;background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4)}
 .apq-st{display:none;margin:.9rem 0 0;padding:.75rem .9rem;border-radius:14px;background:rgba(255,255,255,.08);text-align:left;font-size:.88rem;line-height:1.7;color:#fff}
@@ -9006,6 +9008,19 @@ var get=function(){try{return localStorage.getItem(K)}catch(e){return null}},set
 var ev=function(n){try{window.gtag&&gtag('event',n)}catch(e){}};
 var ico='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>',
     igi='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>';
+var isStandalone=!!(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;
+var dp=null;window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e});
+var ico2='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg>';
+var pwSteps=isIOS
+ ?'<b>iPhone-এ:</b><ol><li>Safari-তে সাইট খোলো।</li><li>নিচের <b>Share</b> বাটন চাপো।</li><li><b>Add to Home Screen</b> চাপো, তারপর <b>Add</b>।</li></ol>'
+ :'<b>Android-এ (Chrome):</b><ol><li>ডান উপরের <b>⋮ মেনু</b> চাপো।</li><li><b>Install app</b> বা <b>Add to Home screen</b> চাপো।</li><li><b>Install</b> চাপো। হোম স্ক্রিনে MCQBook আইকন চলে আসবে।</li></ol>';
+function installPwa(o){
+  ev('pwa_install_click');
+  if(dp){dp.prompt();dp.userChoice&&dp.userChoice.then(function(){dp=null});return}
+  var box=(o||d).querySelector('#apq-pws');
+  if(box){box.classList.toggle('on');return}
+  show(true);var o2=d.querySelector('.apq-o'),b2=o2&&o2.querySelector('#apq-pws');if(b2)b2.classList.add('on');
+}
 function show(force){
   if(d.querySelector('.apq-o'))return;
   var o=d.createElement('div');o.className='apq-o';o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');o.setAttribute('aria-labelledby','apq-t');
@@ -9016,6 +9031,7 @@ function show(force){
    +'<div class="apq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></div>'
    +'<h3 id="apq-t">MCQBook অ্যাপ নাও</h3><p>এক ক্লিকে ডাউনলোড করো, ফোনেই MCQ প্র্যাকটিস করো — একদম ফ্রি।</p>'
    +dl
+   +(isStandalone?'':'<button class="apq-b apq-pw" type="button" id="apq-pw">'+ico2+'<span>সহজ ইনস্টল (কোনো সতর্কতা নেই)</span></button><div class="apq-pws" id="apq-pws">'+pwSteps+'</div>')
    +'<button class="apq-b apq-br" type="button" id="apq-br">ব্রাউজারেই চালিয়ে যাও</button>'
    +'<a class="apq-b apq-ig" id="apq-ig" href="'+IG_URL+'" target="_blank" rel="noopener">'+igi+'<span>Instagram-এ ফলো করো</span></a>'
    +'<div class="apq-st"><b>ইনস্টল করার নিয়ম:</b><ol><li>Chrome “ফাইলটি ক্ষতিকর হতে পারে” দেখালে <b>Download anyway</b> চাপো।</li><li>ডাউনলোড শেষে <b>MCQBook.apk</b> ওপেন করো। “Install unknown apps” চাইলে <b>Allow</b> দাও।</li><li>Play Protect সতর্কতা এলে <b>More details → Install anyway</b> চাপো।</li><li><b>Install</b> চাপো, তারপর <b>Open</b>।</li></ol><div style="opacity:.75;font-size:.78rem;margin-top:.4rem">অ্যাপটি এখনো Google Play Store-এ নেই, তাই ফোন এই সতর্কতা দেখায়।</div></div>'
@@ -9025,6 +9041,7 @@ function show(force){
   var prev=d.activeElement;
   o.querySelector('.apq-x').onclick=function(){close(true)};
   o.querySelector('#apq-br').onclick=function(){close(true)};
+  var pb=o.querySelector('#apq-pw');if(pb)pb.onclick=function(){installPwa(o)};
   o.addEventListener('click',function(e){if(e.target===o)close(true)});
   d.addEventListener('keydown',esc);
   var b=o.querySelector('#apq-dl');
@@ -9057,9 +9074,11 @@ function homeBanner(){
   var s=d.createElement('section');s.className='apq-hm';s.setAttribute('aria-label','MCQBook অ্যাপ');
   s.innerHTML='<div class="i">'+phone+'</div><div class="t"><b>MCQBook অ্যাপ — ফ্রি ডাউনলোড</b><span class="s">এক ক্লিকে ডাউনলোড করো, ফোনেই MCQ প্র্যাকটিস করো।</span></div><div class="a">'
    +(isIOS?'':'<a class="apq-b apq-dl" href="'+APK_URL+'" download="'+APK_NAME+'">'+ico+'<span>ডাউনলোড <small>('+APK_SIZE+')</small></span></a>')
+   +(isStandalone?'':'<button type="button" class="apq-b apq-pw apq-pwb" style="flex:1 1 140px;padding:.7rem .9rem;font-size:.92rem;margin-top:0;border-radius:14px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:.5rem;cursor:pointer;font-family:inherit">'+ico2+'<span>সহজ ইনস্টল</span></button>')
    +'<a class="apq-b apq-ig" href="'+IG_URL+'" target="_blank" rel="noopener">'+igi+'<span>Instagram ফলো</span></a></div>';
   var a=s.querySelector('.apq-dl');if(a)a.addEventListener('click',function(){set('dl');ev('apk_download_home');show(true);var o=d.querySelector('.apq-o');if(o)o.classList.add('dl')});
   s.querySelector('.apq-ig').addEventListener('click',function(){ev('instagram_follow_click')});
+  var pw=s.querySelector('.apq-pwb');if(pw)pw.addEventListener('click',function(){installPwa(null)});
   hx.parentNode.insertBefore(s,hx.nextSibling);
 }
 ready(function(){var q=0;new MutationObserver(function(){if(q)return;q=requestAnimationFrame(function(){q=0;homeBanner()})}).observe(d.documentElement,{childList:true,subtree:true});homeBanner()});
