@@ -29,7 +29,6 @@
 <meta name="twitter:image" content="https://mcqbook.online/og-image.png">
 <meta name="twitter:image:alt" content="MCQBook — SSC MCQ প্র্যাকটিস, বোর্ড প্রশ্ন ও মডেল টেস্ট">
 <link rel="manifest" href="/site.webmanifest">
-<script>window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__mcqDP=e});(function(){try{var m=navigator.deviceMemory,c=navigator.hardwareConcurrency,sm=Math.min(screen.width,innerWidth)<=820&&matchMedia('(pointer:coarse)').matches;if((m&&m<=4)||(c&&c<=4)||sm)document.documentElement.classList.add('lite')}catch(e){}})()</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[
 {"@type":"WebSite","@id":"https://mcqbook.online/#website","url":"https://mcqbook.online/","name":"MCQBook","alternateName":"MCQ Book","description":"MCQBook — বাংলাদেশের ফ্রি MCQ প্র্যাকটিস অ্যাপ ও ওয়েবসাইট। SSC (NCTB) চ্যাপ্টার-ভিত্তিক MCQ, বোর্ড প্রশ্ন উত্তরসহ, মডেল টেস্ট ও ভুলের রিপোর্ট — free MCQ practice app BD।","inLanguage":"bn","publisher":{"@id":"https://mcqbook.online/#organization"}},
 {"@type":"Organization","@id":"https://mcqbook.online/#organization","name":"MCQBook","alternateName":"MCQBOOK.ONLINE","url":"https://mcqbook.online/","logo":{"@type":"ImageObject","url":"https://mcqbook.online/logo-512.png","width":512,"height":512},"founder":{"@id":"https://mcqbook.online/#founder"}},
@@ -1526,7 +1525,7 @@ let AU={tab:'in',msg:'',busy:false,u:'',show:false};
 function authView(){const up=AU.tab=='up';return `<div class='card authcard' style='max-width:420px;margin:2rem auto'><div class='authbrand'>${logoMark()}</div><div class='unl'>Unlimited MCQ Practice</div><h1 style='text-align:center;font-size:1.3rem'>এমসিকিউ প্র্যাকটিস হাব</h1><p class='mu' style='text-align:center'>স্মার্টভাবে পড়ো, চাপমুক্ত থাকো।</p><div class='row' style='justify-content:center;margin:.8rem 0'><button class='chip ${up?'':'on'}' data-a='atab' data-v='in'>লগইন</button><button class='chip ${up?'on':''}' data-a='atab' data-v='up'>অ্যাকাউন্ট খোলো</button></div><label for='au'>${up?'ইমেইল':'ইমেইল (অথবা পুরোনো ইউজারনেম)'}</label><input id='au' type='${up?'email':'text'}' autocomplete='${up?'email':'username'}' maxlength='80' placeholder='you@example.com' value='${esc(AU.u)}'><label for='ap'>পাসওয়ার্ড</label><input id='ap' type='${AU.show?'text':'password'}' autocomplete='${up?'new-password':'current-password'}' placeholder='কমপক্ষে ৬টি অক্ষর'>${up?`<label for='ap2'>পাসওয়ার্ড আবার লেখো</label><input id='ap2' type='${AU.show?'text':'password'}' autocomplete='new-password'>`:''}<label class='chk' style='margin:.5rem 0 0'><input type='checkbox' data-a='showpw' ${AU.show?'checked':''}>পাসওয়ার্ড দেখাও</label><label class='chk' style='margin:.7rem 0'><input type='checkbox' id='arem' checked>এই ডিভাইসে লগইন করে রাখো</label><p class='err' role='alert'>${esc(AU.msg)}</p><button class='p' style='width:100%' data-a='${up?'signup':'login'}' ${AU.busy?'disabled':''}>${AU.busy?'অপেক্ষা করো...':up?'অ্যাকাউন্ট খোলো':'লগইন'}</button><p class='mu' style='text-align:center;margin:.6rem 0'>অথবা</p><button style='width:100%' data-a='guest'>লগইন ছাড়াই ওয়েবসাইটে ঢোকো</button><p class='mu' style='font-size:.8rem'>অ্যাকাউন্ট খুললে বা লগইন করলে তোমার ইমেইল ও অনুশীলনের সারসংক্ষেপ (কতটি প্রশ্ন, নির্ভুলতা) ওয়েবসাইটের মালিকের ইমেইলে পাঠানো হয়। পাসওয়ার্ড কখনো পাঠানো হয় না, সেটি শুধু এই ব্রাউজারে হ্যাশ করা অবস্থায় থাকে। লগইন ছাড়া ঢুকলে কিছুই পাঠানো হয় না। গুরুত্বপূর্ণ কোনো পাসওয়ার্ড এখানে ব্যবহার কোরো না।</p></div>`}
 function qh(s){let h=5381;for(let i=0;i<s.length;i++)h=((h*33)^s.charCodeAt(i))>>>0;return h.toString(36)}
 let LR='',KEEP=0;
-function anim0(){document.querySelectorAll('[data-p]:not(.rx-hero)').forEach(e=>{const p=+e.dataset.p,sp=e.firstChild;let t0=null;const f=ts=>{if(!t0)t0=ts;const k=Math.min(1,(ts-t0)/900),v=Math.round(p*(1-Math.pow(1-k,3)));e.style.background='conic-gradient(var(--pr) '+v+'%,var(--bd) 0)';sp.textContent=v+'%';if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}
+function anim0(){document.querySelectorAll('[data-p]').forEach(e=>{const p=+e.dataset.p,sp=e.firstChild;let t0=null;const f=ts=>{if(!t0)t0=ts;const k=Math.min(1,(ts-t0)/900),v=Math.round(p*(1-Math.pow(1-k,3)));e.style.background='conic-gradient(var(--pr) '+v+'%,var(--bd) 0)';sp.textContent=v+'%';if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}
 
 /* ===== motion extras: count-up numbers, scroll reveal, confetti, ripple ===== */
 let CFN=-1,IOB=null;
@@ -1534,57 +1533,16 @@ function extras(){
  document.querySelectorAll('#app .tile b').forEach(e=>{const m=/^(\d+)(.*)$/.exec(e.textContent.trim());if(!m||+m[1]<2)return;const n=+m[1],tail=m[2];let t0=null;const f=ts=>{if(!t0)t0=ts;const k=Math.min(1,(ts-t0)/900);e.textContent=Math.round(n*(1-Math.pow(1-k,3)))+tail;if(k<1)requestAnimationFrame(f)};requestAnimationFrame(f)});
  if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&'IntersectionObserver' in window){
   if(!IOB)IOB=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');IOB.unobserve(x.target)}}),{threshold:.08});
-  const tgt=[];let ci=0;document.querySelectorAll('#app .card').forEach(c=>{if(c.closest('.ban')||c.classList.contains('qa')||c.closest('.mbar')||c.classList.contains('norv'))return;if(++ci>3)tgt.push(c)});tgt.forEach(c=>{c.classList.add('rv');IOB.observe(c)})}
- const ring=document.querySelector('#app .rx-hero[data-p],#app .ring[data-p]');
+  const vh=innerHeight;document.querySelectorAll('#app .card').forEach(c=>{if(c.closest('.ban')||c.classList.contains('qa')||c.closest('.mbar')||c.classList.contains('norv'))return;const r=c.getBoundingClientRect();if(r.top>vh*.9){c.classList.add('rv');IOB.observe(c)}})}
+ const ring=document.querySelector('#app .ring[data-p]');
  if(ring&&+ring.dataset.p>=80&&CFN!==S.attempts.length){CFN=S.attempts.length;confetti()}
  else if(!ring)CFN=-1;
 }
-function confetti(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const cols=['#b8912f','#e2c26b','#7a1f35','#14213d','#157347','#fffdf9'];for(let i=0;i<(document.documentElement.classList.contains('lite')?26:60);i++){const d=document.createElement('i');d.className='cf';d.style.left=(Math.random()*100)+'vw';d.style.background=cols[i%cols.length];d.style.setProperty('--dx',(Math.random()*160-80)+'px');d.style.setProperty('--r',(Math.random()*900-450)+'deg');d.style.animationDuration=(2.2+Math.random()*2)+'s';d.style.animationDelay=(Math.random()*.6)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),5200)}}
+function confetti(){if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;const cols=['#b8912f','#e2c26b','#7a1f35','#14213d','#157347','#fffdf9'];for(let i=0;i<70;i++){const d=document.createElement('i');d.className='cf';d.style.left=(Math.random()*100)+'vw';d.style.background=cols[i%cols.length];d.style.setProperty('--dx',(Math.random()*160-80)+'px');d.style.setProperty('--r',(Math.random()*900-450)+'deg');d.style.animationDuration=(2.2+Math.random()*2)+'s';d.style.animationDelay=(Math.random()*.6)+'s';document.body.appendChild(d);setTimeout(()=>d.remove(),5200)}}
 function anim(){anim0();extras();homeFx()}
-/* v5: tap ripple removed (faster taps) */
-function rxGrade(p){return p>=80?['A+','৫.০০']:p>=70?['A','৪.০০']:p>=60?['A-','৩.৫০']:p>=50?['B','৩.০০']:p>=40?['C','২.০০']:p>=33?['D','১.০০']:['F','০.০০']}
-function rxCol(p){return p>=70?'var(--ok)':p>=40?'#d99a1c':'var(--bad)'}
-function rxRing(p,c,sz){return `<svg viewBox='0 0 120 120' class='rx-ring' width='${sz}' height='${sz}' aria-hidden='true'><circle class='rx-bg' cx='60' cy='60' r='52'/><circle class='rx-fg' cx='60' cy='60' r='52' pathLength='100' stroke-dasharray='${p} 100' transform='rotate(-90 60 60)' style='stroke:${c}'/></svg>`}
-function sumHtml(L,used,mins){
- used=Math.max(0,+used||0);
- const n=L.length,c=L.filter(x=>x.c==0).length,w=L.filter(x=>x.c==1).length,k=n-c-w,att=n-k,p=n?Math.round(100*c/n):0,acc=att?Math.round(100*c/att):0,mt=moti(p,n),g=rxGrade(p),col=rxCol(p),
- um=Math.floor(used/60)+' মি '+(used%60)+' সে',avg=att?Math.round(used/att):0,by={};
- L.forEach(x=>{const r=by[x.b]=by[x.b]||[0,0,0];r[2]++;if(x.c==0)r[0]++;if(x.c==1)r[1]++});
- const src=Object.entries(by).map(([b,r])=>[b,r[0],r[2],Math.round(100*r[0]/r[2])]).sort((a,b)=>a[3]-b[3]);
- const tips=[];
- if(w)tips.push(['✗',`<b>${bd(w)}টি</b> ভুল হয়েছে। নিচের “ভুল” ট্যাবে গিয়ে প্রতিটির সঠিক উত্তর ও ব্যাখ্যা দেখে নাও।`,'wrong']);
- if(k)tips.push(['–',`<b>${bd(k)}টি</b> প্রশ্নের উত্তর দেওয়া হয়নি। না পারলেও আন্দাজে চেষ্টা করো, নেগেটিভ মার্কিং না থাকলে এতে লাভই হয়।`,'skip']);
- if(src.length>1&&src[0][3]<60)tips.push(['!',`সবচেয়ে দুর্বল: <b>${ed(src[0][0])}</b> (${bd(src[0][3])}%)। আগে এটা আবার অনুশীলন করো।`,'']);
- if(avg>0)tips.push(['⏱',avg<=25?`গড়ে প্রতি প্রশ্নে <b>${bd(avg)} সেকেন্ড</b>, দারুণ গতি! তাড়াহুড়োয় যেন ভুল না হয় খেয়াল রেখো।`:avg<=60?`গড়ে প্রতি প্রশ্নে <b>${bd(avg)} সেকেন্ড</b>। গতি ও নির্ভুলতার ভালো ভারসাম্য।`:`গড়ে প্রতি প্রশ্নে <b>${bd(avg)} সেকেন্ড</b> লেগেছে। কঠিন প্রশ্ন চিহ্নিত করে এগিয়ে গেলে সময় বাঁচবে।`,'']);
- if(!w&&!k&&n)tips.push(['★','একটাও ভুল নেই! এবার আরও কঠিন সেট বা মক টেস্টে নিজেকে যাচাই করো।','']);
- const share=`MCQBook-এ আমি ${bd(c)}/${bd(n)} (${bd(p)}%) পেয়েছি, গ্রেড ${g[0]}! তুমিও চেষ্টা করো:`;
- return `<div class='card rx-hero' data-p='${p}' style='--rc:${col}'><div class='rx-top'><div class='rx-ringw'>${rxRing(p,col,132)}<div class='rx-pc'><b>${bd(p)}%</b><small>স্কোর</small></div></div><div class='rx-ht'><span class='rx-gr'>গ্রেড ${g[0]} · GPA ${g[1]}</span><h2 style='color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important;border:0!important;padding:0!important'>${mt[1]} ${emo(mt[3])}</h2><p>${mt[2]}</p></div></div><div class='rx-sc'><span><b>${bd(c)}</b>/${bd(n)} সঠিক</span><span>⏱ ${um}</span>${att?`<span>🎯 উত্তর দেওয়াগুলোর ${bd(acc)}% নির্ভুল</span>`:''}</div><div class='rx-split' role='img' aria-label='সঠিক ${c}, ভুল ${w}, বাদ ${k}'><i class='ok' style='flex:${c}'></i><i class='bad' style='flex:${w}'></i><i class='sk' style='flex:${k}'></i></div></div>
-<div class='rx-tiles'><div class='rx-t ok' role='button' tabindex='0' data-a='rvt' data-v='ok'><b>${bd(c)}</b><small>সঠিক</small></div><div class='rx-t bad' role='button' tabindex='0' data-a='rvt' data-v='wrong'><b>${bd(w)}</b><small>ভুল</small></div><div class='rx-t sk' role='button' tabindex='0' data-a='rvt' data-v='skip'><b>${bd(k)}</b><small>বাদ</small></div><div class='rx-t'><b>${bd(avg)}<em>সে</em></b><small>গড় সময়/প্রশ্ন</small></div></div>
-${tips.length?`<div class='card rx-card'><h3>তোমার জন্য পরামর্শ</h3><ul class='rx-tips'>${tips.map(t=>`<li${t[2]?` role='button' tabindex='0' data-a='rvt' data-v='${t[2]}'`:''}><i>${t[0]}</i><span>${t[1]}</span></li>`).join('')}</ul></div>`:''}
-${src.length?`<div class='card rx-card'><h3>উৎস অনুযায়ী ফল <small class='mu'>(দুর্বল আগে)</small></h3>${src.map(r=>`<div class='rx-b'><div class='rx-bh'><span>${ed(r[0])}</span><b style='color:${rxCol(r[3])}'>${bd(r[1])}/${bd(r[2])} · ${bd(r[3])}%</b></div><div class='rx-bt'><i style='width:${r[3]}%;background:${rxCol(r[3])}'></i></div></div>`).join('')}</div>`:''}
-<div class='card rx-card rx-foot'><button type='button' class='rx-sh' data-a='rxshare' data-t='${esc(share)}'>${ic('quiz')} স্কোর শেয়ার করো</button><p class='mu'>ফলাফল তোমার <a href='#/report'>আমার রিপোর্টে</a> সংরক্ষিত হয়েছে।</p></div>`}
-function rptView(){
- const R=rpt(),AT=S.attempts||[];
- if(!R.n)return `<h1>${ic('report')}আমার রিপোর্ট</h1><div class='card rx-empty'><div class='rx-eg'>📊</div><h2>রিপোর্ট এখনো খালি</h2><p class='mu'>একটা কুইজ, বোর্ড সেট বা মক টেস্ট দিলেই তোমার স্কোর, ভুল, দুর্বল বিষয় আর অগ্রগতি এখানে সুন্দর করে সাজানো হবে।</p><div class='rx-cta'><a class='btn p' href='#/quick'>৫ মিনিটের কুইক প্র্যাকটিস</a><a class='btn' href='#/learn'>বিষয় বেছে নাও</a></div></div>`;
- const pc=a=>a.total?Math.round(100*a.score/a.total):0,acc=R.q?Math.round(100*R.ok/R.q):0,wrong=R.q-R.ok,
- day=t=>{const d=new Date(t);return d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate()},days=new Set(AT.map(a=>day(a.date)));
- let streak=0;{const d=new Date();if(!days.has(day(d)))d.setDate(d.getDate()-1);while(days.has(day(d))&&streak<400){streak++;d.setDate(d.getDate()-1)}}
- const WD=['রবি','সোম','মঙ্গল','বুধ','বৃহ','শুক্র','শনি'],wk=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);wk.push([WD[d.getDay()],days.has(day(d)),i==0])}
- const LV=[[0,'নতুন শিক্ষার্থী'],[25,'অনুশীলনকারী'],[75,'অগ্রগামী'],[150,'দক্ষ'],[300,'বিশেষজ্ঞ'],[600,'মাস্টার'],[1000,'লেজেন্ড']];let li=0;LV.forEach((x,i)=>{if(R.ok>=x[0])li=i});const nx=LV[li+1],lp=nx?Math.round(100*(R.ok-LV[li][0])/(nx[0]-LV[li][0])):100;
- const P=AT.map(pc),l5=P.slice(-5),p5=P.slice(-10,-5),av=a=>a.length?Math.round(a.reduce((x,y)=>x+y,0)/a.length):0,dl=p5.length?av(l5)-av(p5):null,best=Math.max(...P),avgT=R.q?Math.round(R.sec/R.q):0;
- const subs=Object.entries(R.bySub).filter(x=>x[0]!='Sample').map(([k,v])=>[k,v[0],v[1],Math.round(100*v[0]/v[1])]),big=subs.filter(x=>x[2]>=5).sort((a,b)=>b[3]-a[3]),st=big.length>1?big[0]:null,wk0=big.length>1?big[big.length-1]:null;
- const KL={board:'বোর্ড',mock:'মক টেস্ট',quiz:'কুইজ'},hrs=R.sec>=3600?bd(Math.floor(R.sec/3600))+' ঘ '+bd(Math.floor(R.sec%3600/60))+' মি':bd(Math.floor(R.sec/60))+' মি',g=rxGrade(acc),col=rxCol(acc);
- const dt=t=>{try{return new Date(t).toLocaleDateString('bn-BD',{day:'numeric',month:'short'})}catch(e){return ''}};
- return `<h1>${ic('report')}আমার রিপোর্ট</h1>
-<div class='card rx-hero' data-p='${acc}' style='--rc:${col}'><div class='rx-top'><div class='rx-ringw'>${rxRing(acc,col,132)}<div class='rx-pc'><b>${bd(acc)}%</b><small>নির্ভুলতা</small></div></div><div class='rx-ht'><span class='rx-gr'>লেভেল ${bd(li+1)} · ${LV[li][1]}</span><h2 style='color:#fff!important;-webkit-text-fill-color:#fff!important;background:none!important;border:0!important;padding:0!important'>${moti(acc,R.q)[1]} ${emo(moti(acc,R.q)[3])}</h2><p>${moti(acc,R.q)[2]}</p></div></div>
-<div class='rx-lv'><div class='rx-lvh'><span>${nx?`পরের লেভেল: <b>${nx[1]}</b>`:'সর্বোচ্চ লেভেলে পৌঁছে গেছো!'}</span><span>${nx?bd(R.ok)+'/'+bd(nx[0])+' সঠিক':''}</span></div><div class='rx-bt dk'><i style='width:${lp}%'></i></div></div></div>
-<div class='rx-tiles six'><div class='rx-t'><b>${bd(R.n)}</b><small>পরীক্ষা</small></div><div class='rx-t'><b>${bd(R.q)}</b><small>মোট প্রশ্ন</small></div><div class='rx-t ok'><b>${bd(R.ok)}</b><small>সঠিক</small></div><div class='rx-t bad'><b>${bd(wrong)}</b><small>ভুল বা বাদ</small></div><div class='rx-t'><b>${bd(best)}%</b><small>সেরা স্কোর</small></div><div class='rx-t'><b>${hrs}</b><small>মোট সময়</small></div></div>
-<div class='card rx-card'><div class='rx-sh2'><h3>প্রতিদিনের অভ্যাস</h3><span class='rx-fire'>🔥 ${bd(streak)} দিন</span></div><div class='rx-wk'>${wk.map(x=>`<div class='${x[1]?'on':''} ${x[2]?'td':''}'><i>${x[1]?'✓':''}</i><small>${x[0]}</small></div>`).join('')}</div><p class='mu rx-n'>${streak?'প্রতিদিন অন্তত একটা কুইজ দিলে ধারাবাহিকতা বাড়ে।':'আজ একটা কুইজ দিয়ে নতুন ধারা শুরু করো।'}</p></div>
-<div class='card rx-card'><div class='rx-sh2'><h3>সাম্প্রতিক অগ্রগতি</h3>${dl===null?'':`<span class='rx-dl ${dl>=0?'up':'dn'}'>${dl>=0?'▲':'▼'} ${bd(Math.abs(dl))}%</span>`}</div>${cols(AT.slice(-10))}<p class='mu rx-n'>${dl===null?'আরও কয়েকটি পরীক্ষা দিলে উন্নতির তুলনা দেখা যাবে।':`শেষ ৫টির গড় ${bd(av(l5))}%, আগের ৫টির গড় ${bd(av(p5))}%।`} সবুজ ৭০%+, হলুদ ৪০%+, লাল ৪০%-এর নিচে।</p></div>
-${st?`<div class='rx-two'><div class='card rx-card rx-good'><small>💪 সবচেয়ে শক্তিশালী</small><b>${ed(st[0])}</b><span>${bd(st[3])}% · ${bd(st[1])}/${bd(st[2])}</span></div><div class='card rx-card rx-weak'><small>🎯 মনোযোগ দরকার</small><b>${ed(wk0[0])}</b><span>${bd(wk0[3])}% · ${bd(wk0[1])}/${bd(wk0[2])}</span><a href='#/learn'>এখনই অনুশীলন →</a></div></div>`:''}
-${subs.length?`<div class='card rx-card'><h3>বিষয় অনুযায়ী নির্ভুলতা</h3>${subs.sort((a,b)=>a[3]-b[3]).map(r=>`<div class='rx-b'><div class='rx-bh'><span>${ed(r[0])}</span><b style='color:${rxCol(r[3])}'>${bd(r[3])}%</b></div><div class='rx-bt'><i style='width:${r[3]}%;background:${rxCol(r[3])}'></i></div><small class='mu'>${bd(r[1])}/${bd(r[2])} সঠিক</small></div>`).join('')}</div>`:''}
-<div class='card rx-card'><h3>সাম্প্রতিক পরীক্ষা</h3><div class='rx-ls'>${AT.slice(-8).reverse().map(a=>{const p=pc(a),gg=rxGrade(p);return `<div class='rx-li'><div class='rx-gb' style='background:${rxCol(p)}'>${gg[0]}</div><div class='rx-lm'><b>${KL[a.kind]||'পরীক্ষা'}${a.subj&&a.subj!='Quick practice'?' · '+ed(a.subj):''}</b><small class='mu'>${dt(a.date)}${a.used?' · '+bd(Math.max(1,Math.round(a.used/60)))+' মি':''}</small></div><div class='rx-ls2'><b>${bd(a.score)}/${bd(a.total)}</b><small style='color:${rxCol(p)}'>${bd(p)}%</small></div></div>`}).join('')}</div></div>
-<div class='card rx-card rx-foot'><p class='mu'>মোট বোর্ড: ${bd(R.kinds.board)} · মক টেস্ট: ${bd(R.kinds.mock)} · কুইজ: ${bd(R.kinds.quiz)} · গড় ${bd(avgT)} সে/প্রশ্ন</p><button data-a='resetrep'>আমার রিপোর্ট মুছে ফেলো</button><p class='mu' style='font-size:.82rem'>এই ডিভাইসের ব্রাউজারে সংরক্ষিত।</p></div>`}
+document.addEventListener('pointerdown',e=>{const b=e.target.closest&&e.target.closest('button,.btn,.opt,.chip');if(!b||b.disabled)return;const r=b.getBoundingClientRect(),s=document.createElement('span');s.className='rip';s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';b.appendChild(s);setTimeout(()=>s.remove(),700)});
+function sumHtml(L,used,mins){const n=L.length,c=L.filter(x=>x.c==0).length,w=L.filter(x=>x.c==1).length,k=n-c-w,p=n?Math.round(100*c/n):0,by={};L.forEach(x=>{const r=by[x.b]=by[x.b]||[0,0];r[1]++;if(x.c==0)r[0]++});const mt=moti(p,n),msg=mt[3]+' '+mt[1];const um=Math.floor(used/60)+' মি '+(used%60)+' সে';
+return `<div class='card rep'><div class='ring' data-p='${p}' style='background:conic-gradient(var(--pr) 0%,var(--bd) 0)'><span style='background:var(--card);border-radius:50%;width:104px;height:104px;display:grid;place-items:center'>0%</span></div><h2 style='text-align:center'>${msg}</h2><p class='mu' style='text-align:center;margin-top:-.3rem'>${mt[2]}</p><div class='tiles'><div class='tile' role='button' tabindex='0' data-a='rvt' data-v='ok' title='সঠিক প্রশ্নগুলো দেখো'><b class='ok'>${c}</b><small>সঠিক</small></div><div class='tile' role='button' tabindex='0' data-a='rvt' data-v='wrong' title='ভুল প্রশ্নগুলো দেখো'><b class='err'>${w}</b><small>ভুল</small></div><div class='tile' role='button' tabindex='0' data-a='rvt' data-v='skip' title='বাদ পড়া প্রশ্নগুলো দেখো'><b>${k}</b><small>বাদ</small></div><div class='tile'><b>${um}</b><small>সময়${mins?' (সীমা '+mins+' মি)':''}</small></div></div><h3>উৎস অনুযায়ী স্কোর</h3>${Object.entries(by).map(([b,r])=>{const q=Math.round(100*r[0]/r[1]);return `<div style='margin:.4rem 0'><div class='row'><span class='grow'>${ed(b)}</span><b>${r[0]}/${r[1]}</b></div><div class='bar'><i style='width:${q}%'></i></div></div>`}).join('')}<p class='mu'>${ic('quiz')} ফলাফলের সারাংশ তোমার <a href='#/report'>রিপোর্টে</a> সংরক্ষিত হয়েছে।</p></div>`}
 function subsOf(a){const m={};a.forEach(z=>{const q=QH[z[0]],s=q?q.s:'Sample',r=m[s]=m[s]||[0,0];r[1]++;if(z[1])r[0]++});return m}
 function rpt(){const R={n:S.attempts.length,q:0,ok:0,sec:0,bySub:{},kinds:{board:0,mock:0,quiz:0}};S.attempts.forEach(a=>{R.q+=a.total;R.ok+=a.score;R.sec+=a.used||0;if(R.kinds[a.kind]!==undefined)R.kinds[a.kind]++;Object.entries(a.subs||{}).forEach(([s,z])=>{const r=R.bySub[s]=R.bySub[s]||[0,0];r[0]+=z[0];r[1]+=z[1]})});return R}
 const rcol=p=>p>=70?'var(--ok)':p>=40?'var(--gold)':'var(--bad)';
@@ -7417,7 +7375,10 @@ return `<h1>${ic('setup')}সেটিংস</h1><div class='card' style='max-wi
 <label for="lang">পছন্দের ভাষা</label><select id="lang"><option value="English" ${d.lang=='English'?'selected':''}>ইংরেজি</option><option value="Bangla" ${d.lang=='Bangla'?'selected':''}>বাংলা</option></select>
 <fieldset style="border:0;padding:0;margin:.6rem 0"><legend style="font-weight:600">বিষয়</legend>${c.subjects.map(s=>`<label class="chk"><input type="checkbox" name="sub" value="${s}" ${d.subjects.includes(s)?'checked':''}>${ed(s)}</label>`).join('')}</fieldset>
 <label for="exam">পরীক্ষার তারিখ (ঐচ্ছিক)</label><input type="date" id="exam" value="${d.exam}"><p id="msg" class="err" role="alert"></p><button class="p" data-a="saveprof">সংরক্ষণ করো</button><p class="mu">বিষয়ের তালিকা নমুনা মাত্র, সরকারি সিলেবাস নয়। তোমার তথ্য শুধু এই ব্রাউজারে থাকে।</p></div>`},
-report(){return rptView()},
+report(){const R=rpt();
+if(!R.n)return `<h1>${ic('report')}আমার রিপোর্ট</h1><div class='card'><p class='mu'>এখনো কোনো পরীক্ষা দাওনি। বোর্ড পরীক্ষা বা মক টেস্ট দিলে তোমার স্কোর, ভুল ও অনুশীলনের সময় এখানে নিজে থেকেই জমা হবে।</p><a class='btn p' href='#/learn'>অনুশীলন শুরু করো</a></div>`;
+const acc=R.q?Math.round(100*R.ok/R.q):0,bar=m=>Object.entries(m).sort((a,b)=>b[1][1]-a[1][1]).map(([k,v])=>{const p=Math.round(100*v[0]/v[1]);return `<div style='margin:.5rem 0'><div class='row'><span class='grow'>${ed(k)}</span><b>${p}%</b><small class='mu'>${v[0]}/${v[1]}</small></div><div class='bar'><i style='width:${p}%'></i></div></div>`}).join(''),KL={board:'বোর্ড পরীক্ষা',mock:'মক টেস্ট',quiz:'কুইজ'},hm=Math.floor(R.sec/60);
+return `<h1>${ic('report')}আমার রিপোর্ট</h1><div class='rep'>${motiCard(R,acc)}<div class='card'><div class='tiles'><div class='tile'><b>${R.n}</b><small>পরীক্ষা দিয়েছ</small></div><div class='tile'><b>${R.q}</b><small>প্রশ্ন অনুশীলন</small></div><div class='tile'><b class='ok'>${R.ok}</b><small>সঠিক</small></div><div class='tile'><b class='err'>${R.q-R.ok}</b><small>ভুল বা বাদ</small></div><div class='tile'><b>${acc}%</b><small>নির্ভুলতা</small></div><div class='tile'><b>${hm} মি.</b><small>পরীক্ষার সময়</small></div></div><p class='mu'>বোর্ড পরীক্ষা: ${R.kinds.board} · মক টেস্ট: ${R.kinds.mock}</p></div><div class='card'><h3>আমার স্ট্যাটাস</h3><div class='stat'>${donut(R.ok,R.q)}<div class='stl'><span class='badge' style='background:${rcol(acc)}'>${stTxt(acc)}</span><p class='lg'><i style='background:var(--ok)'></i>সঠিক <b>${R.ok}</b></p><p class='lg'><i style='background:var(--bad);opacity:.5'></i>ভুল বা বাদ <b>${R.q-R.ok}</b></p><p class='mu' style='margin:.3rem 0 0'>মোট ${R.q}টি প্রশ্ন · ${R.n}টি পরীক্ষা</p></div></div></div>${Object.keys(R.bySub).length?`<div class='card'><h3>বিষয় অনুযায়ী স্ট্যাটাস</h3><div class='rings'>${Object.entries(R.bySub).sort((a,b)=>b[1][1]-a[1][1]).map(([k,v])=>{const p=Math.round(100*v[0]/v[1]);return `<div class='rbox'>${ring(p,84,p+'%')}<b>${ed(k)}</b><small class='mu'>${v[0]}/${v[1]} সঠিক</small></div>`}).join('')}</div></div>`:''}<div class='card'><h3>সাম্প্রতিক স্কোরের চার্ট</h3>${cols(S.attempts.slice(-10))}<p class='mu' style='font-size:.82rem;margin:.3rem 0 0'>প্রতিটি কলাম একটি পরীক্ষার স্কোর (%) · পুরোনো থেকে নতুন। সবুজ ৭০%+, সোনালি ৪০%+, লাল ৪০%-এর নিচে।</p></div>${Object.keys(R.bySub).length?`<div class='card'><h3>বিষয় অনুযায়ী নির্ভুলতা</h3>${bar(R.bySub)}</div>`:''}<div class='card'><h3>সাম্প্রতিক পরীক্ষা</h3>${S.attempts.slice(-8).reverse().map(a=>{const p=a.total?Math.round(100*a.score/a.total):0;return `<div style='margin:.5rem 0'><div class='row'><span class='grow'>${KL[a.kind]||esc(a.subj)} <small class='mu'>${new Date(a.date).toLocaleDateString()}</small></span><b>${a.score}/${a.total}</b></div><div class='bar'><i style='width:${p}%'></i></div></div>`}).join('')}<button data-a='resetrep'>আমার রিপোর্ট মুছে ফেলো</button><p class='mu' style='font-size:.85rem'>এই ডিভাইসের ব্রাউজারে সংরক্ষিত। ক্লাউড সিঙ্ক পরে যোগ করা যাবে।</p></div></div>`},
 mock(){const subj=[...new Set(BQ.map(q=>q.s))],n0=MK.qs?MK.qs.length:0;
 if(MK.ph=='setup'){const s=MK.s;if(!s)return learnView();if(MK.mode=='chap')return chapView();const tpm=MK.mode=='topic'&&hasTP(s),tps=MK.tps||[],p0=BQ.filter(q=>q.s==s&&(!tpm||tps.includes(q.tp))).length,fb=tpm&&tps.length&&!p0,pool=fb?BQ.filter(q=>q.s==s).length:p0,n=Math.min(MK.n,pool);
 return `<button class='back' data-a='mkback'>← বিষয় বদলাও</button>${subHero(s,MK.fixed&&tps[0]?esc(tps[0]):tpm?'টপিক অনুযায়ী মক':'মক টেস্ট')}<div class='card setc px-card' style='max-width:none'><div class='wz-st'>${tpm&&!MK.fixed?`<span class='${pool?'dn':'on'}'><i>১</i>অধ্যায়</span>`:''}<span class='${tpm&&!MK.fixed&&!pool?'':'on'}'><i>${tpm&&!MK.fixed?'২':'১'}</i>প্রশ্ন</span><span class='${tpm&&!MK.fixed&&!pool?'':'on'}'><i>${tpm&&!MK.fixed?'৩':'২'}</i>সময়</span></div>${tpm&&!MK.fixed?`<h3 class='wz-h'><i>১</i><span>অধ্যায় বেছে নাও <small>(একাধিক বাছতে পারো)</small></span></h3><div class='wz-yr'>${TOPICS[s].map((t,i)=>`<button class='wz-y ${tps.includes(t)?'on':''}' data-a='mktp' data-v='${esc(t)}' style='--i:${i}'><b style='font-size:1.02rem'>${esc(t)}</b></button>`).join('')}</div><div class='row' style='margin-top:.6rem'><button class='chip' data-a='mktpall'>সব অধ্যায়</button><button class='chip' data-a='mktpnone'>সব বাদ</button></div>`:''}<h3 class='wz-h'><i>${tpm&&!MK.fixed?'২':'১'}</i><span>কতগুলো প্রশ্ন?</span></h3><div class='wz-nt'>${[10,20,30,50].map(x=>`<button class='wz-n ${MK.n==x?'on':''}' data-a='mkn' data-v='${x}'><b>${bd(x)}</b><small>প্রশ্ন</small></button>`).join('')}</div><label for='mkq'>অথবা নিজে ঠিক করো (১–${bd(pool||1)} প্রশ্ন)</label><input id='mkq' type='number' min='1' max='${pool||1}' value='${n}'><h3 class='wz-h'><i>${tpm&&!MK.fixed?'৩':'২'}</i><span>কত মিনিট সময়?</span></h3><div class='wz-tm'>${[10,15,20,30,45].map(x=>`<button class='wz-n ${MK.t==x?'on':''}' data-a='mkt' data-v='${x}'><b>${bd(x)}</b><small>মিনিট</small></button>`).join('')}</div><label for='mkc'>অথবা নিজে ঠিক করো (১–১৮০ মিনিট)</label><input id='mkc' type='number' min='1' max='180' value='${MK.t}'>${fb?"<p class='mu' style='margin:.8rem 0 0'>এই অধ্যায়ের প্রশ্ন এখনো যোগ হয়নি, তাই এই বিষয়ের মিশ্র প্রশ্ন দেওয়া হবে।</p>":''}<div class='wz-go'><div class='wz-sum'><b>${tpm&&!pool?'আগে অধ্যায় বেছে নাও':bd(n)+'টি প্রশ্ন · '+bd(MK.t)+' মিনিট'}</b><small>${ed(s)}</small></div><button class='p' data-a='mkgo' ${pool?'':'disabled'}>শুরু করো →</button></div></div>`}
@@ -7496,8 +7457,7 @@ const emo=e=>EMI[e]?ic(EMI[e]):e;
 const ic=k=>`<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
 const brandHtml=`<a class="brand" href="#/home" aria-label="MCQBOOK.ONLINE হোম">${logoMark()}<small>এমসিকিউ প্র্যাকটিস হাব</small></a>`;
 const NAV=[['home','হোম','হোম'],['learn','বিষয় বেছে নাও','অনুশীলন'],['report','আমার রিপোর্ট','রিপোর্ট'],['founder','About · প্রতিষ্ঠাতা','About'],['setup','সেটিংস','সেটিংস']];
-function __sideSet(h){var s=document.getElementById('side');if(s&&s.__h!==h){s.innerHTML=h;s.__h=h}}
-function render(){if(ME=='_guest'&&location.hash=='#/login'){document.body.classList.add('auth');$('#side').innerHTML='';$('#app').innerHTML=authView();return}document.body.classList.remove('auth');const r=location.hash.replace('#/','')||'home';document.title=r=='founder'?'Md. Masnur Islam Ishan (Ishan) – Software Engineer & CEO of Kallaiya | Founder of MCQBook':'MCQBook — ফ্রি MCQ প্র্যাকটিস অ্যাপ BD | SSC MCQ, বোর্ড প্রশ্ন, মডেল টেস্ট';{const m=document.querySelector('meta[name=description]');if(m){if(!window.__d0)window.__d0=m.content;m.content=r=='founder'?FDESC:window.__d0}}const ap=$('#app');if(r==LR)ap.classList.remove('enter');ap.innerHTML=(views[r]||views.home)();if(r!=LR){ap.classList.remove('enter');void ap.offsetWidth;ap.classList.add('enter');LR=r}anim();__sideSet(`${brandHtml}`+'<nav class="nv" aria-label="মেনু">'+NAV.map(([k,l,sh],i)=>`<a href="#/${k}" class="${(k==r||(k=='learn'&&/^(exam|mock|quick)$/.test(r)))?'on':''}">${ic(k)}<span class="lb">${l}</span><span class="sl">${sh}</span></a>`).join('')+'</nav>'+`<div class="ub"><span class="mu">${ME=='_guest'?'অতিথি':'লগইন করা আছে:'}</span><b>${S.profile&&S.profile.name?esc(S.profile.name):ME=='_guest'?'অতিথি মোড':esc(who())}</b><button data-a="logout">${ME=='_guest'?'লগইন / সাইন আপ':'লগআউট'}</button></div>`)}
+function render(){if(ME=='_guest'&&location.hash=='#/login'){document.body.classList.add('auth');$('#side').innerHTML='';$('#app').innerHTML=authView();return}document.body.classList.remove('auth');const r=location.hash.replace('#/','')||'home';document.title=r=='founder'?'Md. Masnur Islam Ishan (Ishan) – Software Engineer & CEO of Kallaiya | Founder of MCQBook':'MCQBook — ফ্রি MCQ প্র্যাকটিস অ্যাপ BD | SSC MCQ, বোর্ড প্রশ্ন, মডেল টেস্ট';{const m=document.querySelector('meta[name=description]');if(m){if(!window.__d0)window.__d0=m.content;m.content=r=='founder'?FDESC:window.__d0}}const ap=$('#app');if(r==LR)ap.classList.remove('enter');ap.innerHTML=(views[r]||views.home)();if(r!=LR){ap.classList.remove('enter');void ap.offsetWidth;ap.classList.add('enter');LR=r}anim();$('#side').innerHTML=`${brandHtml}`+'<nav class="nv" aria-label="মেনু">'+NAV.map(([k,l,sh],i)=>`<a href="#/${k}" class="${(k==r||(k=='learn'&&/^(exam|mock|quick)$/.test(r)))?'on':''}">${ic(k)}<span class="lb">${l}</span><span class="sl">${sh}</span></a>`).join('')+'</nav>'+`<div class="ub"><span class="mu">${ME=='_guest'?'অতিথি':'লগইন করা আছে:'}</span><b>${S.profile&&S.profile.name?esc(S.profile.name):ME=='_guest'?'অতিথি মোড':esc(who())}</b><button data-a="logout">${ME=='_guest'?'লগইন / সাইন আপ':'লগআউট'}</button></div>`}
 document.addEventListener('click',e=>{const a=e.target.closest&&e.target.closest('a[href^="#/"]');if(!a||e.defaultPrevented||e.button||e.ctrlKey||e.metaKey||e.shiftKey)return;e.preventDefault();const h=a.getAttribute('href');if(location.hash===h){render();return}location.hash=h});
 addEventListener('hashchange',()=>{if(KEEP){KEEP=0;render();return}Q={ph:'setup'};clearInterval(BX.id);BX={ph:'setup'};clearInterval(MK.id);clearTimeout(MK.tm);MK=mk0();qkSave();QK={ph:'setup'};LN={sub:''};render()});
 
@@ -7564,7 +7524,7 @@ xwb(e){BX.sb=e.dataset.v;BX.sy=BX.pr?'*':null;BX.sn='all';BX.st=0;scrollTo(0,0)}
 xwback(){if(BX.sy){BX.sy=null;if(BX.pr)BX.sb=null}else if(BX.sb){BX.sb=null}else return A.xback();scrollTo(0,0)},
 xoth(){BX={ph:'setup',sub:BX.sub,pr:1};scrollTo(0,0)},
 xwy(e){BX.sy=e.dataset.v;BX.sn='all';BX.st=0;scrollTo(0,0)},
-xwn(e){BX.sn=e.dataset.v},
+xwn(e){BX.sn=e.dataset.v;BX.st=0},
 xwt(e){BX.st=+e.dataset.v},
 wstart(){const w=wzInfo(),sb=BX.sb,sy=BX.sy;if(!sb||!sy||!w.f.length){const m=$('#msg');if(m)m.textContent='আগে বোর্ড ও বছর বেছে নাও।';return true}
 let f=w.f.map(q=>({q:q.q,o:q.o,ai:q.a,e:q.e||'',h:q.h,src:q.b+' '+q.y}));f=w.n<w.tot?shuffle(f).slice(0,w.n):(sb=='*'||sy=='*')?shuffle(f):f;
@@ -7584,7 +7544,7 @@ clrbank(){if(confirm('সব ইমপোর্ট করা প্রশ্ন 
 };
 document.addEventListener('click',e=>{const t=e.target.closest('[data-a]');if(!t)return;const f=A[t.dataset.a];if(f&&!f(t))render()});
 document.addEventListener('keydown',e=>{if((e.key=='Enter'||e.key==' ')&&e.target.dataset&&e.target.dataset.a=='flip'){e.preventDefault();A.flip();render()}});
-document.addEventListener('change',e=>{if(e.target.dataset.ch){const k=e.target.value;draft=Object.assign(draft||{},{country:k,board:CUR[k].boards[0],cls:CUR[k].classes[0],subjects:[]});render()}});/* v5: mkc handled by wzSync */
+document.addEventListener('change',e=>{if(e.target.dataset.ch){const k=e.target.value;draft=Object.assign(draft||{},{country:k,board:CUR[k].boards[0],cls:CUR[k].classes[0],subjects:[]});render()}});document.addEventListener('change',e=>{if(e.target.id=='mkc'){const x=Math.round(+e.target.value);if(x>=1&&x<=180)MK.t=x;render()}});
 document.addEventListener('keydown',e=>{if(e.key=='Enter'&&location.hash=='#/login'&&e.target.tagName=='INPUT'){const b=document.querySelector("[data-a='login'],[data-a='signup']");if(b)b.click()}});
 document.addEventListener('keydown',e=>{if(location.hash!='#/quick'||QK.ph!='run'||e.ctrlKey||e.metaKey||e.altKey||/INPUT|TEXTAREA|SELECT/.test(e.target.tagName||''))return;const k=e.key,q=QK.pool[QK.k];let ok=true;
 if(k>='1'&&k<='4'&&q&&q.o[+k-1]!==undefined)A.qkpick({dataset:{j:+k-1}});else if(k=='Enter'||k=='ArrowRight'){if(QK.pick!==undefined)A.qknext();else ok=false}else ok=false;if(ok){e.preventDefault();render()}});
@@ -7705,7 +7665,7 @@ P=[[0,'ভরের SI একক কোনটি?',['কিলোগ্রাম
 P.forEach(r=>{const sub='Physics',tp=TOPICS[sub][r[0]],ok=r[2][0],o=shuffle(r[2].slice()),x={b:SB,y:2026,s:sub,q:r[1],o,a:o.indexOf(ok),tp};x.h=qh(x.b+'|'+sub+'|'+x.q);if(QH[x.h])return;QH[x.h]=x;BQ.push(x)})})();
 
 /* ===== Result statistics (modern / classic view) ===== */
-let STV='m';A.stv=()=>{STV=STV=='m'?'c':'m'};A.rxshare=e=>{const t=e.dataset.t||'',u='https://mcqbook.online';try{if(navigator.share){navigator.share({text:t,url:u}).catch(()=>{});return true}}catch(x){}try{navigator.clipboard.writeText(t+' '+u);e.textContent='✓ কপি হয়েছে'}catch(x){prompt('কপি করো',t+' '+u)}return true};
+let STV='m';A.stv=()=>{STV=STV=='m'?'c':'m'};
 function statCard(Q,ans,used){const n=Q.length,att=Q.filter((x,k)=>ans[k]!==undefined).length,ok=Q.filter((x,k)=>ans[k]===x.a).length,wr=att-ok,sk=n-att,acc=att?Math.round(100*ok/att):0,avg=att?Math.round((used||0)/att):0,bq=Q.filter(x=>!isP(x)).length,tp={};
 Q.forEach((x,k)=>{const t=String(x.tp||x.s).replace(/^[^:]*:\s*/,''),r=tp[t]=tp[t]||[0,0];r[1]++;if(ans[k]===x.a)r[0]++});
 const rows=Object.entries(tp).map(([t,r])=>[t,r[0],r[1],Math.round(100*r[0]/r[1])]).sort((a,b)=>a[3]-b[3]),
@@ -7716,7 +7676,7 @@ if(STV=='c')return `<div class='card'>${head}<table style='width:100%;border-col
 return `<div class='card'>${head}<div class='tiles'>${[['সঠিক',ok,'ok'],['ভুল',wr,'err'],['বাদ',sk,''],['নির্ভুলতা',acc+'%',''],['গড় সময়',avg+' সে',''],['বোর্ড প্রশ্ন',bq,'']].map(r=>`<div class='tile'><b class='${r[2]}'>${bd(r[1])}</b><small>${r[0]}</small></div>`).join('')}</div><h3>অধ্যায় অনুযায়ী ফল (দুর্বল আগে)</h3>${rows.map(r=>`<div style='margin:.45rem 0'><div class='row'><span class='grow'>${esc(r[0])}</span><b>${bd(r[1])}/${bd(r[2])}</b></div><div class='bar'><i style='width:${r[3]}%'></i></div></div>`).join('')}</div>`}
 
 /* ===== Custom question count ===== */
-/* v5: mkq/xqn handled by wzSync */
+document.addEventListener('change',e=>{const i=e.target.id;if(i=='mkq'){const x=Math.round(+e.target.value);if(x>=1)MK.n=x;render()}else if(i=='xqn'){const x=Math.round(+e.target.value);if(x>=1){BX.sn=x;BX.st=0}render()}});
 
 /* ===== Achievement-coloured badges ===== */
 const TIER=[['#7a4a1d','#d08a46'],['#5b6573','#b9c2cf'],['#9a6b00','#f0bf2a'],['#33415c','#8fa3c7'],['#0e6b66','#34d3c6']],TN=['ব্রোঞ্জ','সিলভার','গোল্ড','প্ল্যাটিনাম','ডায়মন্ড'];
@@ -8970,7 +8930,7 @@ var q=0;new MutationObserver(function(){if(q)return;q=requestAnimationFrame(func
 <script>
 (function(){const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12}):null;
 const scan=()=>document.querySelectorAll('.rv:not(.in):not([data-o])').forEach(el=>{el.dataset.o=1;io?io.observe(el):el.classList.add('in')});
-let sq=0;new MutationObserver(()=>{if(sq)return;sq=requestAnimationFrame(()=>{sq=0;scan()})}).observe(document.getElementById('app')||document.body,{childList:true,subtree:true});scan();
+let sq=0;new MutationObserver(()=>{if(sq)return;sq=requestAnimationFrame(()=>{sq=0;scan()})}).observe(document.documentElement,{childList:true,subtree:true});scan();
 let pr=0,pe=null;document.addEventListener('pointermove',e=>{if(e.pointerType==='touch')return;pe=e;if(pr)return;pr=requestAnimationFrame(()=>{pr=0;const h=document.querySelector('.hx');if(!h)return;const r=h.getBoundingClientRect();h.style.setProperty('--mx',(pe.clientX-r.left)+'px');h.style.setProperty('--my',(pe.clientY-r.top)+'px')})},{passive:true});})();
 </script>
 <script>
@@ -9011,7 +8971,7 @@ if(d.body)setTimeout(show,700);else d.addEventListener('DOMContentLoaded',()=>se
 <script>
 (function(){
 const SEL='.p,.btn,.px-go,.hx-b,.nb-p,.wz-n,.wz-y,.mopt,.opt,.sx,.md,.mq-p,.gd-c,.px-set,.px-t';
-/* v5: tap ripple removed */})();
+document.addEventListener('pointerdown',e=>{const t=e.target.closest&&e.target.closest(SEL);if(!t||t.disabled)return;const r=t.getBoundingClientRect(),d=Math.max(r.width,r.height)*2,x=document.createElement('span');x.className='rpl';x.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px';t.appendChild(x);setTimeout(()=>x.remove(),650)},{passive:true});})();
 </script>
 <style id="pm-fix">.hx .hx-h{color:#f8fafc}
 html[data-theme=dark] #app button:not([class]),html[data-theme=dark] #app button[class=""]{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
@@ -9200,7 +9160,8 @@ html[data-theme=dark] .th-k{transform:translateX(26px);background:#0b1226;color:
 <script id="apq-js">
 (function(){
 /* ====== settings ====== */
-var IG_URL='https://www.instagram.com/mcqbook.online/',   /* <- put your real Instagram link here */
+var APK_URL='app/mcqbook.apk',APK_NAME='MCQBook.apk',APK_SIZE='৬.৯ MB',
+    IG_URL='https://www.instagram.com/mcqbook.online/',   /* <- put your real Instagram link here */
     REPEAT_DAYS=7;                                         /* "browser-e continue" dile koto din por abar dekhabe */
 var d=document,ua=navigator.userAgent||'',K='mcqb_apppop';
 var isAndroid=/Android/i.test(ua),isIOS=/iPhone|iPad|iPod/i.test(ua);
@@ -9234,8 +9195,10 @@ function show(force){
   var o=d.createElement('div');o.className='apq-o';o.setAttribute('role','dialog');o.setAttribute('aria-modal','true');o.setAttribute('aria-labelledby','apq-t');
   o.innerHTML='<div class="apq-c"><button class="apq-x" type="button" aria-label="বন্ধ করো">×</button>'
    +'<div class="apq-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></div>'
-   +'<h3 id="apq-t">MCQBook অ্যাপ নাও</h3><p>নিচের বাটনে একবার চাপলেই অ্যাপ ফোনের হোম স্ক্রিনে চলে আসবে। ফ্রি, কোনো ফাইল ডাউনলোড বা সেটিংস লাগবে না।</p>'
-   +(isStandalone?'<p class="apq-note" style="opacity:.85;font-size:.9rem">অ্যাপ ইতিমধ্যে ইনস্টল করা আছে ✓</p>':'<div class="apq-rec">★ এক ক্লিকে ইনস্টল · ফ্রি · নিরাপদ</div><button class="apq-b apq-dl apq-main" type="button" id="apq-dl">'+ico2+'<span>অ্যাপ ইনস্টল করো <small>১ ক্লিকে হোম স্ক্রিনে</small></span></button><div class="apq-pws'+((inAppBrowser||isIOS)?' on':'')+'" id="apq-pws">'+pwSteps+'</div>')
+   +'<h3 id="apq-t">MCQBook অ্যাপ নাও</h3><p>এক ক্লিকে ইনস্টল করো, ফোনেই MCQ প্র্যাকটিস করো — ফ্রি, কোনো সতর্কতা ছাড়াই।</p>'
+   +(isStandalone?'<p class="apq-note" style="opacity:.85;font-size:.9rem">অ্যাপ ইতিমধ্যে ইনস্টল করা আছে ✓</p>':'<div class="apq-rec">★ সুপারিশকৃত · সবচেয়ে সহজ · কোনো সতর্কতা নেই</div><button class="apq-b apq-dl apq-main" type="button" id="apq-dl">'+ico2+'<span>অ্যাপ ইনস্টল করো <small>১ ক্লিকে হোম স্ক্রিনে</small></span></button><div class="apq-pws'+((inAppBrowser||isIOS)?' on':'')+'" id="apq-pws">'+pwSteps+'</div>')
+   +(isIOS?'':'<a class="apq-b apq-apk" id="apq-apk" href="'+APK_URL+'" download="'+APK_NAME+'">'+ico+'<span>বিকল্প: APK ডাউনলোড <small>('+APK_SIZE+')</small></span></a>')
+   +'<div class="apq-st"><b>APK ইনস্টল করার নিয়ম:</b><ol><li>Chrome “ফাইলটি ক্ষতিকর হতে পারে” দেখালে <b>Download anyway</b> চাপো।</li><li>ডাউনলোড শেষে <b>MCQBook.apk</b> ওপেন করো। “Install unknown apps” চাইলে <b>Allow</b> দাও।</li><li>Play Protect সতর্কতা এলে <b>More details → Install anyway</b> চাপো।</li><li><b>Install</b> চাপো, তারপর <b>Open</b>।</li></ol><div style="opacity:.75;font-size:.78rem;margin-top:.4rem">অ্যাপটি এখনো Google Play Store-এ নেই, তাই ফোন এই সতর্কতা দেখায়। সতর্কতা এড়াতে উপরের “অ্যাপ ইনস্টল করো” বাটন ব্যবহার করো।</div></div>'
    +'<button class="apq-b apq-br" type="button" id="apq-br">ব্রাউজারেই চালিয়ে যাও</button>'
    +'<a class="apq-b apq-ig" id="apq-ig" href="'+IG_URL+'" target="_blank" rel="noopener">'+igi+'<span>Instagram-এ ফলো করো</span></a>'
    +'</div>';
@@ -9246,7 +9209,8 @@ function show(force){
   o.querySelector('#apq-br').onclick=function(){close(true)};
   o.addEventListener('click',function(e){if(e.target===o)close(true)});
   d.addEventListener('keydown',esc);
-    var b=o.querySelector('#apq-dl');
+  var ak=o.querySelector('#apq-apk');if(ak)ak.addEventListener('click',function(){o.classList.add('dl');ev('apk_download')});
+  var b=o.querySelector('#apq-dl');
   if(b)b.addEventListener('click',function(){installPwa(o)});
   o.querySelector('#apq-ig').addEventListener('click',function(){ev('instagram_follow_click')});
   d.body.appendChild(o);
@@ -9257,7 +9221,7 @@ window.mcqbShowApp=show;
 function ready(f){d.body?f():d.addEventListener('DOMContentLoaded',f)}
 /* small download button in the top-right control bar, so people can reopen the popup later */
 ready(function(){
-  var n=0,t=setInterval(function(){var c=d.querySelector('.ctl');if(c&&!c.querySelector('.apq-ctl')){var x=d.createElement('button');x.type='button';x.className='apq-ctl';x.title=x.ariaLabel='অ্যাপ ইনস্টল';x.innerHTML=ico2+'<span>অ্যাপ</span>';x.onclick=function(){if(dp)installPwa(null);else show(true)};c.insertBefore(x,c.firstChild);clearInterval(t)}else if(++n>40)clearInterval(t)},250);
+  var n=0,t=setInterval(function(){var c=d.querySelector('.ctl');if(c&&!c.querySelector('.apq-ctl')){var x=d.createElement('button');x.type='button';x.className='apq-ctl';x.title=x.ariaLabel='অ্যাপ ইনস্টল';x.innerHTML=ico2+'<span>অ্যাপ</span>';x.onclick=function(){show(true)};c.insertBefore(x,c.firstChild);clearInterval(t)}else if(++n>40)clearInterval(t)},250);
 });
 /* home-page banner: re-inserted whenever the home screen is rendered */
 var phone='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg>';
@@ -9277,30 +9241,14 @@ function homeBanner(){
   if(isStandalone)return;
   s.innerHTML='<div class="i">'+phone+'</div><div class="t"><b>MCQBook অ্যাপ — ফ্রি ইনস্টল</b><span class="s">এক ক্লিকে ইনস্টল করো, ফোনেই MCQ প্র্যাকটিস করো।</span></div><div class="a">'
    +'<button type="button" class="apq-b apq-dl apq-pwb apq-main" style="cursor:pointer;font-family:inherit">'+ico2+'<span>অ্যাপ ইনস্টল করো <small>১ ক্লিক · ফ্রি</small></span></button>'
+   +(isIOS?'':'<a class="apq-b apq-apk apq-apkh" href="'+APK_URL+'" download="'+APK_NAME+'">'+ico+'<span>APK <small>('+APK_SIZE+')</small></span></a>')
    +'<a class="apq-b apq-ig" href="'+IG_URL+'" target="_blank" rel="noopener">'+igi+'<span>Instagram ফলো</span></a></div>';
+  var ah=s.querySelector('.apq-apkh');if(ah)ah.addEventListener('click',function(){ev('apk_download_home');show(true);var o=d.querySelector('.apq-o');if(o)o.classList.add('dl')});
   s.querySelector('.apq-ig').addEventListener('click',function(){ev('instagram_follow_click')});
   var pw=s.querySelector('.apq-pwb');if(pw)pw.addEventListener('click',function(){if(dp)installPwa(null);else{show(true);var o=d.querySelector('.apq-o');if(o)installPwa(o)}});
   hx.parentNode.insertBefore(s,hx.nextSibling);
 }
-ready(function(){var q=0;new MutationObserver(function(){if(q)return;q=requestAnimationFrame(function(){q=0;homeBanner()})}).observe(d.getElementById('app')||d.body,{childList:true});homeBanner()});
-/* sticky one-tap install bar */
-ready(function(){
-  if(isStandalone||get()==='dl')return;
-  var KB='mcqb_bar',bar=null;
-  try{var t=+localStorage.getItem(KB);if(t&&Date.now()-t<3*864e5)return}catch(e){}
-  function okPage(){var h=location.hash.replace('#/','')||'home';return /^(home|learn|report|)$/.test(h)}
-  function sync(){if(!bar)return;bar.style.display=(okPage()&&!d.querySelector('.apq-o'))?'flex':'none'}
-  setTimeout(function(){
-    bar=d.createElement('div');bar.className='apq-bar';bar.setAttribute('role','region');bar.setAttribute('aria-label','অ্যাপ ইনস্টল');
-    bar.innerHTML='<div class="apq-bi">'+ico2+'</div><div class="apq-bt"><b>MCQBook অ্যাপ নাও</b><small>এক ট্যাপে ইনস্টল · ফ্রি</small></div><button type="button" class="apq-bg">ইনস্টল</button><button type="button" class="apq-bx" aria-label="বন্ধ করো">×</button>';
-    bar.querySelector('.apq-bg').onclick=function(){ev('install_bar_click');installPwa(null)};
-    bar.querySelector('.apq-bx').onclick=function(){try{localStorage.setItem(KB,String(Date.now()))}catch(e){}bar.remove();bar=null};
-    d.body.appendChild(bar);sync();
-  },2500);
-  addEventListener('hashchange',sync);
-  window.addEventListener('appinstalled',function(){if(bar){bar.remove();bar=null}});
-  setInterval(sync,1500);
-});
+ready(function(){var q=0;new MutationObserver(function(){if(q)return;q=requestAnimationFrame(function(){q=0;homeBanner()})}).observe(d.documentElement,{childList:true,subtree:true});homeBanner()});
 /* first visit (or after REPEAT_DAYS if they chose "continue on browser") */
 var last=get();
 if(last==='dl')return;                                      /* already downloaded: don't nag */
@@ -10360,8 +10308,8 @@ html[lang][data-theme=dark] body{
     bn:'<b>লেজেন্ড পুরস্কার পোর্টাল</b> প্রিমিয়াম মেম্বারদের জন্য। MCQ-তে ভালো করলে পুরস্কারের সুযোগ আছে।',
     en:'The <b>Legend prize portal</b> is for Premium members.',acts:['topper','premium']},
    {id:'install',kw:/অ্যাপ|app|ইনস্টল|install|apk|ডাউনলোড|download|ফোনে|android|ios|iphone/i,
-    bn:'<b>অ্যাপ নেওয়ার নিয়ম</b>:<ul><li>উপরের <b>“অ্যাপ ইনস্টল”</b> বাটন চাপো → Install</li><li>এক ক্লিকেই হোম স্ক্রিনে চলে আসবে, কোনো APK লাগে না</li><li>iPhone-এ Safari-র Share → <b>Add to Home Screen</b></li></ul>',
-    en:'<b>Get the app</b>: tap “Install app” at the top: one tap and it lands on your home screen, no APK needed. On iPhone use Safari → Share → Add to Home Screen.',acts:['install']},
+    bn:'<b>অ্যাপ নেওয়ার নিয়ম</b>:<ul><li>উপরের <b>“অ্যাপ ইনস্টল”</b> বাটন চাপো → Install</li><li>বিকল্প: <b>APK ডাউনলোড</b> (প্রায় ৬.৯ MB), Android-এ</li><li>iPhone-এ Safari-র Share → <b>Add to Home Screen</b></li></ul>',
+    en:'<b>Get the app</b>: tap “Install app” at the top, or download the APK (~6.9 MB) on Android. On iPhone use Safari → Share → Add to Home Screen.',acts:['install']},
    {id:'subjects',kw:/বিষয়|subject|কোন কোন|কী কী আছে|what.*(have|available)|সিলেবাস|syllabus/i,
     bn:'এখন যেসব বিষয় আছে: বাংলা ১ম ও ২য় পত্র, সাধারণ গণিত, উচ্চতর গণিত, পদার্থবিজ্ঞান, রসায়ন, জীববিজ্ঞান, আইসিটি, বাংলাদেশ ও বিশ্বপরিচয়, ইসলাম ও নৈতিক শিক্ষা, হিসাববিজ্ঞান, ফিন্যান্স ও ব্যাংকিং। <b>ব্যবসায় উদ্যোগ</b> শীঘ্রই আসছে।',
     en:'Subjects: Bangla 1st & 2nd, General & Higher Maths, Physics, Chemistry, Biology, ICT, BGS, Islam & Moral Education, Accounting, Finance & Banking. Business Entrepreneurship is coming soon.',acts:['learn']},
@@ -10375,8 +10323,8 @@ html[lang][data-theme=dark] body{
     bn:'উপরের ডানদিকে <b>চাঁদ/সূর্য</b> বাটনে ডার্ক ও লাইট থিম বদলানো যায়। পাশের <b>স্পিকার</b> বাটনে ক্লিক সাউন্ড অন/অফ করা যায়।',
     en:'Use the moon/sun button (top right) for dark/light theme and the speaker button to turn click sounds on/off.'},
    {id:'founder',kw:/ইশান|ishan|প্রতিষ্ঠাতা|founder|কে বানিয়েছে|কান্ডারি|kallaiya|কল্লাইয়া|যোগাযোগ|contact|instagram|ইনস্টাগ্রাম|ফলো/i,
-    bn:'MCQBook-এর প্রতিষ্ঠাতা <b>Md. Masnur Islam Ishan</b>, Software Engineer ও Kallaiya-র CEO। আমি তাঁর নামে তৈরি নাজাত অ্যাসিস্ট্যান্ট, সাইটের গাইড বট। যোগাযোগ ও আপডেটের জন্য Instagram-এ ফলো করতে পারো।',
-    en:'MCQBook was founded by <b>Md. Masnur Islam Ishan</b>. I’m the Nazat Assistant, the site’s guide bot. Follow on Instagram for updates.',acts:['founder','install']},
+    bn:'MCQBook-এর প্রতিষ্ঠাতা <b>Md. Masnur Islam Ishan</b>, Software Engineer ও Kallaiya-র CEO। আমি তাঁর নামে তৈরি ইশান অ্যাসিস্ট্যান্ট, সাইটের গাইড বট। যোগাযোগ ও আপডেটের জন্য Instagram-এ ফলো করতে পারো।',
+    en:'MCQBook was founded by <b>Md. Masnur Islam Ishan</b>. I’m the Ishan Assistant, the site’s guide bot. Follow on Instagram for updates.',acts:['founder','install']},
    {id:'start',kw:/কীভাবে শুরু|how to start|শুরু করব|start|কোথা থেকে|প্রথমে|beginner|নতুন/i,
     bn:'শুরু করার সহজ পথ:<ol><li><b>বিষয় বেছে নাও</b></li><li>প্রথমে <b>অধ্যায়ভিত্তিক সেট</b>-এ অনুশীলন করো</li><li>তারপর <b>বোর্ড প্রশ্ন</b> সমাধান করো</li><li>শেষে <b>মক টেস্ট</b> দিয়ে নিজেকে যাচাই করো</li><li><b>রিপোর্ট</b> দেখে দুর্বল জায়গা ঠিক করো</li></ol>',
     en:'Easy path: pick a subject → chapter sets → board questions → mock test → check your report and fix weak spots.',acts:['learn','phyChap']}
@@ -10386,10 +10334,10 @@ html[lang][data-theme=dark] body{
   /* ---------- UI ---------- */
   var AV='<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="iaG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset=".5" stop-color="#6366f1"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><circle cx="24" cy="24" r="23" fill="url(#iaG)"/><ellipse cx="18" cy="9" rx="20" ry="10" fill="#fff" opacity=".22"/><rect x="11" y="15" width="26" height="20" rx="9" fill="#fff"/><circle cx="19" cy="25" r="3" fill="#4f46e5"/><circle cx="29" cy="25" r="3" fill="#4f46e5"/><path d="M20 31q4 3 8 0" stroke="#ec4899" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M24 15V9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="8" r="2.6" fill="#fbbf24"/></svg>';
   var root=d.createElement('div');root.id='ia';
-  root.innerHTML='<button class="ia-fab" type="button" aria-label="নাজাত অ্যাসিস্ট্যান্ট খোলো"><span class="ia-av">'+AV+'</span><span class="ia-dot"></span></button>'+
-   '<div class="ia-tip" role="status">👋 কোনো সাহায্য লাগবে? <b>নাজাত অ্যাসিস্ট্যান্ট</b></div>'+
-   '<section class="ia-pn" role="dialog" aria-label="নাজাত অ্যাসিস্ট্যান্ট" aria-hidden="true">'+
-   '<header><span class="ia-av ia-av2">'+AV+'</span><div><b>নাজাত অ্যাসিস্ট্যান্ট</b><small><i></i> অনলাইন · MCQBook গাইড</small></div><button class="ia-x" type="button" aria-label="বন্ধ করো">×</button></header>'+
+  root.innerHTML='<button class="ia-fab" type="button" aria-label="ইশান অ্যাসিস্ট্যান্ট খোলো"><span class="ia-av">'+AV+'</span><span class="ia-dot"></span></button>'+
+   '<div class="ia-tip" role="status">👋 কোনো সাহায্য লাগবে? <b>ইশান অ্যাসিস্ট্যান্ট</b></div>'+
+   '<section class="ia-pn" role="dialog" aria-label="ইশান অ্যাসিস্ট্যান্ট" aria-hidden="true">'+
+   '<header><span class="ia-av ia-av2">'+AV+'</span><div><b>ইশান অ্যাসিস্ট্যান্ট</b><small><i></i> অনলাইন · MCQBook গাইড</small></div><button class="ia-x" type="button" aria-label="বন্ধ করো">×</button></header>'+
    '<div class="ia-log" aria-live="polite"></div><div class="ia-chips"></div>'+
    '<form class="ia-f"><input type="text" placeholder="যেমন: পদার্থবিজ্ঞান বোর্ড প্রশ্ন…" aria-label="প্রশ্ন লেখো" autocomplete="off"><button type="submit" aria-label="পাঠাও"><svg viewBox="0 0 24 24"><path d="M3 11.5 21 3l-8.5 18-2-7.5z" fill="currentColor"/></svg></button></form></section>';
   d.body.appendChild(root);
@@ -10430,7 +10378,7 @@ html[lang][data-theme=dark] body{
   }
   function greet(){
     typing(function(){
-      var m=bubble('আসসালামু আলাইকুম! আমি <b>নাজাত অ্যাসিস্ট্যান্ট</b> 👋<br>MCQBook-এর সব ফিচার, বোর্ড প্রশ্ন, অধ্যায়ভিত্তিক সেট, মক টেস্ট সবকিছু বুঝিয়ে দেব, আর দরকারে সরাসরি পেজটাও খুলে দেব। নিচ থেকে বেছে নাও বা নিজের প্রশ্ন লেখো।');
+      var m=bubble('আসসালামু আলাইকুম! আমি <b>ইশান অ্যাসিস্ট্যান্ট</b> 👋<br>MCQBook-এর সব ফিচার, বোর্ড প্রশ্ন, অধ্যায়ভিত্তিক সেট, মক টেস্ট সবকিছু বুঝিয়ে দেব, আর দরকারে সরাসরি পেজটাও খুলে দেব। নিচ থেকে বেছে নাও বা নিজের প্রশ্ন লেখো।');
       renderChips(CHIPS);
     });
   }
@@ -10480,8 +10428,8 @@ html[lang][data-theme=dark] body{
   };
 
   /* hide the floating button on the quiz screen (it would cover the submit bar) */
-  var sy=0;function sync(){sy=0;var q=!!d.querySelector('.mopts');root.classList.toggle('quiz',q)}
-  new MutationObserver(function(){if(!sy)sy=requestAnimationFrame(sync)}).observe(d.getElementById('app')||d.body,{childList:true});window.addEventListener('hashchange',sync);sync();
+  function sync(){var q=!!d.querySelector('.mopts');root.classList.toggle('quiz',q)}
+  new MutationObserver(sync).observe(d.getElementById('app')||d.body,{childList:true,subtree:true});window.addEventListener('hashchange',sync);sync();
   if(!seen)setTimeout(function(){if(!pn.classList.contains('on'))tip.classList.add('show');setTimeout(function(){tip.classList.remove('show')},7000)},4500);
 })();
 
@@ -10731,7 +10679,7 @@ function gBtn(){
   sc.addEventListener('load',draw);
 }
 function sName(edit){
-  step(bub('হ্যালো! আমি <b>নাজাত অ্যাসিস্ট্যান্ট</b>। তোমার নামটা বলবে? হোমের ড্যাশবোর্ডে তোমার নাম ধরেই স্বাগত জানাব।')
+  step(bub('হ্যালো! আমি <b>ইশান অ্যাসিস্ট্যান্ট</b>। তোমার নামটা বলবে? হোমের ড্যাশবোর্ডে তোমার নাম ধরেই স্বাগত জানাব।')
    +'<input class="eg-in" id="eg-nm" type="text" maxlength="40" autocomplete="name" placeholder="তোমার নাম লেখো" value="'+(edit&&hasName()?esc(S.profile.name):'')+'" aria-label="তোমার নাম"><div class="eg-er" id="eg-er" role="alert"></div>'
    +'<button type="button" class="eg-b dk" data-eg="savename">চালিয়ে যাও</button><button type="button" class="eg-sk" data-eg="'+(edit?'cancel':'skipname')+'">'+(edit?'বাতিল':'এখন না')+'</button>','#eg-nm');
 }
@@ -10747,7 +10695,7 @@ function saveName(n){
 }
 function pass(){lss('mcqb_entry','1');if(!lsg('mcqb_apppop'))lss('mcqb_apppop',String(Date.now()))}
 d.addEventListener('click',function(e){
-  if(pend&&root&&e.target.closest&&e.target.closest('#apq-dl,.apq-dl')){pend=0;setTimeout(function(){pass();sName(false)},500);return}
+  if(pend&&root&&e.target.closest&&e.target.closest('#apq-apk,#apq-dl,.apq-dl,.apq-apkh')){pend=0;setTimeout(function(){pass();sName(false)},500);return}
   var b=e.target.closest&&e.target.closest('[data-eg],[data-ed]');if(!b)return;
   var k=b.getAttribute('data-eg'),z=b.getAttribute('data-ed');
   if(z==='dl'){d.body.classList.add('ed-print');var un=function(){d.body.classList.remove('ed-print');removeEventListener('afterprint',un)};addEventListener('afterprint',un);setTimeout(function(){window.print()},30);return}
@@ -10779,133 +10727,4 @@ try{render()}catch(e){}
 })();
 </script>
 
-
-<script id="fast-v5">
-/* ===== v5 speed + selection fixes (question data untouched) ===== */
-(function(){
-'use strict';
-var CF={x:{o:function(){return BX},card:'xq',clr:'xclr',sub:'xsubmit'},mk:{o:function(){return MK},card:'mq',clr:'mkclr',sub:'mksubmit'}};
-function idx(e,o){return e&&e.dataset&&e.dataset.i!==undefined?+e.dataset.i:o.i}
-function syncBar(c){
-  var o=c.o(),n=o.qs.length,na=Object.keys(o.ans).length,q=function(s){return document.querySelector(s)};
-  var bar=q('#app .mbar .bar i');if(bar)bar.style.width=(100*na/n)+'%';
-  var cnt=q('#app .mbar .mu b');if(cnt)cnt.textContent=na;
-  document.querySelectorAll('#app .qn button').forEach(function(b,k){b.classList.toggle('a',o.ans[k]!==undefined);b.classList.toggle('f',!!o.fl[k])});
-  var w=q('#app .err[role=alert]');if(w)w.textContent=o.warn||'';
-  var sb=q('#app [data-a='+c.sub+']');if(sb){sb.classList.toggle('pulse',na==n);var tx=o.cf?'হ্যাঁ, এখনই জমা দাও':'জমা দাও';if(sb.textContent!==tx)sb.textContent=tx}
-}
-function patchCard(c,i){
-  var o=c.o(),card=document.getElementById(c.card+i);if(!card)return false;
-  var a=o.ans[i];
-  card.querySelectorAll('.mopt').forEach(function(b,j){var s=a===j;b.classList.toggle('sel',s);b.setAttribute('aria-pressed',s)});
-  var clr=card.querySelector('.clr');
-  if(a!==undefined&&!clr){var d=document.createElement('div');d.className='row';d.style.cssText='justify-content:flex-end;margin-top:.6rem';d.innerHTML='<button class="clr" data-a="'+c.clr+'" data-i="'+i+'">উত্তর মুছে দাও</button>';card.appendChild(d)}
-  else if(a===undefined&&clr&&clr.parentNode)clr.parentNode.remove();
-  return true;
-}
-function patchFlag(c,i){
-  var o=c.o(),card=document.getElementById(c.card+i);if(!card)return;
-  var b=card.querySelector('.flg');if(!b)return;var on=!!o.fl[i];
-  b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);b.innerHTML=ic('flag')+' '+(on?'চিহ্নিত':'চিহ্নিত করো');
-}
-function fast(name,c,fn){
-  var f=A[name];if(!f)return;
-  A[name]=function(e){
-    var o=c.o();
-    if(!o||o.ph!=='run'||!o.qs||!document.getElementById(c.card+idx(e,o))){return f(e)}
-    var r=f(e);var i=idx(e,o);fn(c,i);syncBar(c);return true;
-  };
-}
-/* action names differ: xans/xclr/xfl vs mka/mkclr/mkf */
-fast('xans',CF.x,function(c,i){patchCard(c,i)});
-fast('xclr',CF.x,function(c,i){patchCard(c,i)});
-fast('xfl',CF.x,function(c,i){patchFlag(c,i)});
-fast('mka',CF.mk,function(c,i){patchCard(c,i)});
-fast('mkclr',CF.mk,function(c,i){patchCard(c,i)});
-fast('mkf',CF.mk,function(c,i){patchFlag(c,i)});
-['xj','mkj'].forEach(function(n){var f=A[n];A[n]=function(e){var r=f(e);var o=n=='xj'?BX:MK;document.querySelectorAll('#app .qn button').forEach(function(b,k){b.classList.toggle('c',k==o.i)});return true}});
-
-/* custom question-count / minutes inputs: update state live, never re-render */
-function setOn(sel,test){document.querySelectorAll(sel).forEach(function(b){b.classList.toggle('on',!!test(b))})}
-window.wzSync=function(el,final){
-  var id=el.id,x=Math.round(+el.value),mx=+el.max||(id=='mkc'?180:1e9);
-  if(!(x>=1)){if(final){el.value=id=='mkq'?Math.min(MK.n,mx):id=='mkc'?MK.t:wzInfo().n}return}
-  if(x>mx)x=mx;if(id=='mkc'&&x>180)x=180;
-  if(final&&+el.value!==x)el.value=x;
-  if(id=='mkq'){MK.n=x;setOn('#app .wz-nt .wz-n',function(b){return +b.dataset.v==x})}
-  else if(id=='mkc'){MK.t=x;setOn('#app .wz-tm .wz-n',function(b){return +b.dataset.v==x})}
-  else if(id=='xqn'){
-    BX.sn=x;var W=wzInfo();
-    setOn('#app .wz-nt .wz-n',function(b){return b.dataset.v=='all'?W.n==W.tot:+b.dataset.v==BX.sn});
-    setOn('#app .wz-tm .wz-n',function(b){return +b.dataset.v==(BX.st||0)});
-    var au=document.querySelector('#app .wz-tm .wz-n[data-v="0"] b');if(au)au.textContent=bd(W.n);
-    var sm=document.querySelector('#app .wz-sum small');if(sm)sm.textContent=bd(W.n)+'টি প্রশ্ন · '+bd(W.t)+' মিনিট';
-  }
-};
-document.addEventListener('input',function(e){var i=e.target&&e.target.id;if(i=='mkq'||i=='mkc'||i=='xqn')wzSync(e.target,false)});
-document.addEventListener('change',function(e){var i=e.target&&e.target.id;if(i=='mkq'||i=='mkc'||i=='xqn')wzSync(e.target,true)});
-/* quick-start safety: commit the typed value before a Start tap is processed */
-document.addEventListener('pointerdown',function(e){var b=e.target.closest&&e.target.closest('[data-a=xstart],[data-a=mkgo]');if(!b)return;['mkq','mkc','xqn'].forEach(function(id){var el=document.getElementById(id);if(el)wzSync(el,false)})},true);
-
-/* mark exam screens so CSS can pause decorative animation + blur */
-var _render=render;
-render=function(){_render.apply(this,arguments);var h=location.hash,run=(h=='#/exam'&&BX.ph=='run')||(h=='#/mock'&&MK.ph=='run')||(h=='#/quick'&&QK.ph=='run');document.body.classList.toggle('mcq-run',!!run)};
-})();
-</script>
-<style id="fast-css-v5">
-/* tap / click animations off */
-.rip,.rpl{display:none!important}
-.mopt,.mopt *,.flg,.qn button,.wz-n,.wz-y,.wz-b,.wz-b *,.px-set,.px-t,.clr,.p,.btn,.chip,.cs,.md,.sj,.gd-c,.mq,.card.mq{animation:none!important;transition:none!important}
-.mopt.just,.mopt.just .lt,.mopt.just .ck path,.mopt.sel,.flg.on,.qn .a{animation:none!important}
-.mopt .ck,.mopt .ck path{transition:none!important}
-/* instant taps */
-a,button,input,select,label,[data-a]{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-/* long question lists: skip offscreen layout/paint */
-#app .mq{content-visibility:auto;contain-intrinsic-size:auto 300px}
-/* while taking a test: no looping decoration, no blur layers */
-body.mcq-run *,body.mcq-run *::before,body.mcq-run *::after{animation-iteration-count:1!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-body.mcq-run .tmr.low{animation:tlow 1s ease-in-out infinite!important}
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-</style>
-<style id="rx-css">.apq-bar{position:fixed;left:10px;right:84px;bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:60;display:none;align-items:center;gap:.6rem;padding:.55rem .6rem .55rem .7rem;border-radius:18px;color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 14px 30px -12px rgba(79,70,229,.7);max-width:560px;margin:0 auto}
-.apq-bi{flex:none;width:2.2rem;height:2.2rem;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.2)}.apq-bi svg{width:1.3rem;height:1.3rem}
-.apq-bt{flex:1;min-width:0;line-height:1.25}.apq-bt b{display:block;font-size:.92rem}.apq-bt small{font-size:.74rem;opacity:.88}
-.apq-bg{flex:none;border:0;border-radius:99px;padding:.5rem 1rem;font-weight:800;color:#4f46e5;background:#fff;cursor:pointer;font-family:inherit}
-.apq-bx{flex:none;border:0;background:transparent;color:#fff;font-size:1.3rem;line-height:1;padding:.2rem .4rem;cursor:pointer;opacity:.8}
-@media(min-width:900px){.apq-bar{bottom:20px}}
-/* ===== report v6 ===== */
-html[lang][lang] body .card.rx-hero,html body .card.rx-hero{border:0!important;color:#fff!important;border-radius:22px!important;padding:1.2rem!important;background:radial-gradient(420px 220px at 100% 0,rgba(226,194,107,.35),transparent 65%),linear-gradient(135deg,#0d1730,#1f2f66 60%,#3a1a5e)!important;box-shadow:0 18px 40px -22px rgba(13,23,48,.9)!important;backdrop-filter:none!important}
-html[lang][lang] body .rx-hero .rx-ht h2{color:#fff!important;border:0!important;padding:0!important;background:none!important;-webkit-text-fill-color:#fff!important;text-align:inherit!important}html body .rx-hero .rx-ht h2::before,html body .rx-hero .rx-ht h2::after{display:none!important}
-html body .rx-hero *{color:inherit}html body .rx-hero .rx-ht h2,html body .rx-hero .rx-pc b{color:#fff!important}
-html body .rx-top{display:flex;gap:1rem;align-items:center}
-.rx-ringw{position:relative;flex:none;width:132px;height:132px}.rx-ring{display:block}.rx-bg{fill:none;stroke:rgba(255,255,255,.16);stroke-width:10}.rx-fg{fill:none;stroke-width:10;stroke-linecap:round;animation:rxdraw 1s cubic-bezier(.2,.8,.2,1) both}
-@keyframes rxdraw{from{stroke-dasharray:0 100}}
-.rx-pc{position:absolute;inset:0;display:grid;place-content:center;text-align:center}.rx-pc b{font-size:1.9rem;line-height:1;font-weight:800}.rx-pc small{opacity:.75;font-size:.72rem}
-.rx-ht{min-width:0}html body .rx-ht h2{margin:.35rem 0 .2rem;font-size:1.3rem;line-height:1.3;text-align:left}html body .rx-hero .rx-ht p{margin:0;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.85)!important}
-.rx-gr{display:inline-block;padding:.18rem .7rem;border-radius:99px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-size:.78rem;font-weight:700}
-.rx-sc{display:flex;flex-wrap:wrap;gap:.4rem .9rem;margin:.9rem 0 .6rem;font-size:.86rem;color:rgba(255,255,255,.88)}.rx-sc b{font-size:1.05rem;color:#fff}
-.rx-split{display:flex;height:10px;border-radius:99px;overflow:hidden;background:rgba(255,255,255,.14);gap:2px}.rx-split i{display:block;min-width:0}.rx-split .ok{background:#34d399}.rx-split .bad{background:#f87171}.rx-split .sk{background:#9ca3af}
-.rx-lv{margin-top:1rem}.rx-lvh{display:flex;justify-content:space-between;font-size:.8rem;color:rgba(255,255,255,.85);margin-bottom:.35rem}
-.rx-bt{height:9px;border-radius:99px;background:var(--bd,#e5e5e5);overflow:hidden}.rx-bt i{display:block;height:100%;border-radius:99px;animation:grow .9s cubic-bezier(.2,.8,.2,1)}.rx-bt.dk{background:rgba(255,255,255,.16)}.rx-bt.dk i{background:linear-gradient(90deg,#e2c26b,#f8dd86)}
-.rx-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin:.7rem 0}.rx-tiles.six{grid-template-columns:repeat(3,1fr)}
-.rx-t{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:.7rem .3rem;text-align:center;min-width:0}.rx-t[data-a]{cursor:pointer}
-.rx-t b{display:block;font-size:1.35rem;line-height:1.15;color:var(--tx)}.rx-t b em{font-style:normal;font-size:.7rem;margin-left:.15rem;font-weight:600}.rx-t small{display:block;color:var(--mu);font-size:.74rem;margin-top:.15rem}
-.rx-t.ok b{color:var(--ok)}.rx-t.bad b{color:var(--bad)}.rx-t.sk b{color:var(--mu)}
-html body .rx-card{border-radius:18px;padding:1rem 1.05rem;margin:.7rem 0}.rx-card h3{margin:0 0 .6rem;font-size:1.02rem}
-.rx-tips{list-style:none;margin:0;padding:0;display:grid;gap:.5rem}.rx-tips li{display:flex;gap:.6rem;align-items:flex-start;padding:.6rem .7rem;border-radius:12px;background:var(--soft,rgba(0,0,0,.04));font-size:.9rem;line-height:1.5}.rx-tips li[data-a]{cursor:pointer}.rx-tips i{flex:none;width:1.6rem;height:1.6rem;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:800;background:var(--card);border:1px solid var(--bd)}
-.rx-b{margin:.65rem 0}.rx-bh{display:flex;justify-content:space-between;gap:.6rem;font-size:.9rem;margin-bottom:.3rem}.rx-bh span{min-width:0;overflow-wrap:anywhere}.rx-bh b{white-space:nowrap}
-.rx-foot{text-align:center}.rx-sh{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:99px;border:0;font-weight:700;color:#fff;background:linear-gradient(135deg,#4f46e5,#7c3aed);cursor:pointer}
-.rx-sh2{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.5rem}.rx-sh2 h3{margin:0}.rx-fire{font-weight:700;color:#d97706;font-size:.92rem}
-.rx-wk{display:grid;grid-template-columns:repeat(7,1fr);gap:.35rem;text-align:center}.rx-wk i{display:grid;place-items:center;width:100%;aspect-ratio:1;max-width:38px;margin:0 auto .2rem;border-radius:50%;background:var(--soft,#eee);border:2px solid var(--bd);font-style:normal;font-weight:800;color:#fff}.rx-wk .on i{background:var(--ok);border-color:var(--ok)}.rx-wk .td i{box-shadow:0 0 0 3px rgba(79,70,229,.25)}.rx-wk small{font-size:.7rem;color:var(--mu)}
-.rx-n{margin:.5rem 0 0;font-size:.82rem}.rx-dl{padding:.15rem .6rem;border-radius:99px;font-size:.82rem;font-weight:700}.rx-dl.up{color:var(--ok);background:rgba(22,163,74,.14)}.rx-dl.dn{color:var(--bad);background:rgba(220,38,38,.14)}
-.rx-two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.rx-two .rx-card{margin:.7rem 0;display:flex;flex-direction:column;gap:.15rem}.rx-two small{color:var(--mu)}.rx-two b{font-size:1rem;line-height:1.35}.rx-two span{font-size:.85rem;color:var(--mu)}.rx-good{border-left:4px solid var(--ok)}.rx-weak{border-left:4px solid var(--bad)}.rx-weak a{margin-top:.3rem;font-weight:700;font-size:.85rem}
-.rx-ls{display:grid;gap:.5rem}.rx-li{display:flex;align-items:center;gap:.7rem;padding:.55rem .6rem;border-radius:14px;border:1px solid var(--bd)}.rx-gb{flex:none;width:2.4rem;height:2.4rem;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:.9rem}.rx-lm{flex:1;min-width:0}.rx-lm b{display:block;font-size:.9rem;overflow-wrap:anywhere}.rx-ls2{text-align:right}.rx-ls2 b{display:block}.rx-ls2 small{font-weight:700}
-.rx-empty{text-align:center;padding:2rem 1.2rem}.rx-eg{font-size:3rem}.rx-cta{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1rem}
-@media(max-width:480px){.rx-top{flex-direction:column;text-align:center}html body .rx-ht h2{text-align:center}.rx-sc{justify-content:center}.rx-two{grid-template-columns:1fr}}
-/* ===== lite mode: smooth on low-end phones ===== */
-html.lite *,html.lite *::before,html.lite *::after{animation-duration:.001s!important;animation-iteration-count:1!important;animation-delay:0s!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
-html.lite .rx-fg{animation-duration:.8s!important}html.lite .cf{animation-duration:2.4s!important}html.lite .ia-t i{animation-duration:1.2s!important;animation-iteration-count:infinite!important}
-html.lite body.auth::before,html.lite body.auth::after{display:none!important}
-@media(prefers-reduced-motion:reduce){.rx-fg,.rx-bt i{animation:none}}
-</style>
 </body></html>
