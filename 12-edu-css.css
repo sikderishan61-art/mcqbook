@@ -1,0 +1,111 @@
+/* ===== v4: EDU dashboard (home) + first-visit entry / name / Ishan welcome =====
+   Perf rules: no backdrop-filter, no infinite animations, no observers, one delegated listener. */
+.ed{--ink:#1d1840;--mu2:#6f6a96;--cd:rgba(255,255,255,.8);--cb:#fff;--pu:#7c4ddb;--ch:#fff;container-type:inline-size;margin:0 0 1rem;padding:.8rem;border-radius:28px;color:var(--ink);background:linear-gradient(120deg,#c9ccfb 0%,#dcc1f9 48%,#f8c5ee 100%);box-shadow:0 22px 44px -28px rgba(124,58,237,.55);font-family:'Hind Siliguri',system-ui,sans-serif;text-align:left}
+html[data-theme=dark] .ed{--ink:#ecebff;--mu2:#b3add8;--cd:rgba(24,30,66,.92);--cb:rgba(130,118,214,.3);--pu:#b79bff;--ch:#232b5e;background:linear-gradient(120deg,#1b1f4d,#2a1c52 55%,#43174f)}
+.ed *{box-sizing:border-box}
+.ed button,.ed select{font-family:inherit}
+.ed-grid{display:grid;gap:.8rem;grid-template-columns:minmax(0,1fr)}
+.ed-side,.ed-main{display:grid;gap:.8rem;align-content:start;min-width:0}
+.ed-main{order:-1}
+@container (min-width:880px){.ed-grid{grid-template-columns:270px minmax(0,1fr)}.ed-main{order:0}}
+.ed-top{display:flex;flex-wrap:wrap;gap:.7rem;align-items:flex-end;justify-content:space-between;padding:.2rem .3rem}
+.ed .ed-wl{margin:0;padding:0;border:0;font:800 clamp(1.45rem,6vw,2.1rem)/1.2 'Baloo Da 2','Hind Siliguri',system-ui,sans-serif;color:var(--ink);letter-spacing:-.01em;text-align:left}
+.ed-wl b{font-weight:800;color:var(--ink)}
+.ed-dt{margin:.15rem 0 0;color:var(--mu2);font-size:.86rem}
+.ed-nm{border:1px dashed var(--pu);background:transparent;color:var(--pu);border-radius:99px;padding:.15rem .7rem;font-weight:700;font-size:.8rem;cursor:pointer;margin-left:.3rem;vertical-align:middle}
+.ed-act{display:flex;gap:.5rem;flex-wrap:wrap}
+.ed-sel,.ed-dl{height:44px;border-radius:99px;font-weight:700;font-size:.92rem;cursor:pointer;padding:0 1.1rem}
+.ed-sel{background:var(--cd);color:var(--ink);border:1px solid var(--cb)}
+.ed-dl{background:#0e0c1f;color:#fff;border:0}
+.ed-tiles{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.ed-t{position:relative;overflow:hidden;border-radius:22px;background:var(--cd);border:1px solid var(--cb);padding:.9rem 1rem;min-height:122px;display:flex;flex-direction:column;justify-content:flex-end}
+.ed-t::before{content:"";position:absolute;right:-16px;top:-22px;width:84px;height:64px;border-radius:0 0 0 84px;background:#f0dcc8;opacity:.8;pointer-events:none}
+html[data-theme=dark] .ed-t::before{opacity:.18}
+.ed-t.w{grid-column:1/-1;flex-direction:row;align-items:center;justify-content:flex-start;gap:.9rem}
+.ed-t.w::before{background:#7fb8aa;opacity:.85}
+@container (min-width:620px){.ed-tiles{grid-template-columns:1fr 1fr 1.9fr}.ed-t.w{grid-column:auto}}
+.ed-n{position:relative;font:800 clamp(2.3rem,9vw,3.3rem)/1.05 'Baloo Da 2','Hind Siliguri',system-ui,sans-serif;color:var(--pu);background:linear-gradient(180deg,#9b6cf8,#6d3fd8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+html[data-theme=dark] .ed-n{background:linear-gradient(180deg,#d2bdff,#a07cff);-webkit-background-clip:text;background-clip:text}
+.ed-t small{position:relative;color:var(--mu2);font-size:.95rem;font-weight:600}
+.ed-t em{position:relative;font-style:normal;color:var(--mu2);font-size:.78rem;opacity:.9}
+.ed-ic{position:relative;flex:none;width:84px;height:84px;border-radius:22px;display:grid;place-items:center;background:#d7ebfa}
+html[data-theme=dark] .ed-ic{background:#2b3a6e}
+.ed-ic svg{width:46px;height:46px}
+.ed-tb{position:relative;min-width:0;display:flex;flex-direction:column}
+.ed-c{background:var(--cd);border:1px solid var(--cb);border-radius:22px;padding:1rem}
+.ed-hd{display:flex;align-items:center;justify-content:space-between;gap:.5rem;margin:0 0 .7rem}
+.ed-hd b{font-weight:800;font-size:1.05rem;color:var(--ink)}
+.ed-hd span{font-size:.76rem;font-weight:700;color:var(--mu2);background:var(--ch);border:1px solid var(--cb);border-radius:99px;padding:.15rem .6rem}
+.ed-new{display:flex;align-items:center;gap:.7rem;height:58px;border-radius:18px;background:#0e0c1f;color:#fff!important;text-decoration:none;padding:0 .8rem;font-weight:700;font-size:.98rem}
+.ed-new i{flex:none;width:38px;height:38px;border-radius:11px;border:1.5px dashed rgba(255,255,255,.7);display:grid;place-items:center;font-style:normal;font-size:1.4rem;line-height:1}
+.ed-r{display:flex;align-items:center;gap:.65rem;width:100%;padding:.45rem 0;background:none;border:0;color:var(--ink);text-align:left;cursor:pointer;font:inherit;text-decoration:none;min-height:52px}
+.ed-r+.ed-r{border-top:1px solid var(--cb)}
+.ed-ti{flex:none;width:40px;height:40px;border-radius:13px;display:grid;place-items:center;color:#fff;font:800 1.05rem 'Baloo Da 2','Hind Siliguri',sans-serif}
+.ed-rt{flex:1;min-width:0}
+.ed-rt b{display:block;font-size:.95rem;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--ink)}
+.ed-rt small{display:block;color:var(--mu2);font-size:.76rem}
+.ed-g{flex:none;min-width:36px;text-align:center;padding:.2rem .55rem;border-radius:99px;font-weight:800;font-size:.8rem;background:#efe8ff;color:#5b34c9}
+.ed-g.g5{background:#dcfce7;color:#166534}.ed-g.g4{background:#e0f2fe;color:#075985}.ed-g.g3{background:#ccfbf1;color:#0f766e}.ed-g.g2{background:#fef3c7;color:#92400e}.ed-g.g1{background:#ffedd5;color:#9a3412}.ed-g.g0{background:#fee2e2;color:#991b1b}
+html[data-theme=dark] .ed-g{background:#2d2766;color:#d8c9ff}
+html[data-theme=dark] .ed-g.g5{background:#14532d;color:#bbf7d0}html[data-theme=dark] .ed-g.g4{background:#0c4a6e;color:#bae6fd}html[data-theme=dark] .ed-g.g3{background:#134e4a;color:#99f6e4}html[data-theme=dark] .ed-g.g2{background:#78350f;color:#fde68a}html[data-theme=dark] .ed-g.g1{background:#7c2d12;color:#fed7aa}html[data-theme=dark] .ed-g.g0{background:#7f1d1d;color:#fecaca}
+.ed-jn{flex:none;border:1px solid var(--cb);background:var(--ch);color:var(--ink);border-radius:99px;padding:.3rem .8rem;font-weight:700;font-size:.78rem;cursor:pointer}
+.ed-mu{margin:.2rem 0;color:var(--mu2);font-size:.85rem;line-height:1.55}
+.ed-two{display:grid;gap:.8rem;grid-template-columns:minmax(0,1fr)}
+@container (min-width:640px){.ed-two{grid-template-columns:minmax(0,1.75fr) minmax(0,1fr)}}
+.ed-lg{display:flex;flex-wrap:wrap;gap:.3rem .9rem;margin:0 0 .4rem;font-size:.78rem;color:var(--mu2);font-weight:600}
+.ed-lg i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.35rem;vertical-align:middle}
+.ed-ch svg{display:block;width:100%;height:auto}
+.ed-gl{stroke:currentColor;opacity:.13}.ed-tx{fill:var(--mu2);font-size:16px;font-family:inherit}
+.ed-ln{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:edd 1s .1s ease-out forwards}
+@keyframes edd{to{stroke-dashoffset:0}}
+.ed-dn{position:relative;width:min(190px,72%);margin:.2rem auto .6rem}
+.ed-dn svg{display:block;width:100%;height:auto;transform:rotate(-90deg)}
+.ed-dc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ed-dc b{font:800 1.9rem/1 'Baloo Da 2','Hind Siliguri',sans-serif;color:var(--ink)}
+.ed-dc small{font-size:.72rem;color:var(--mu2);font-weight:600}
+.ed-sm{display:flex;align-items:center;gap:.5rem;font-size:.84rem;padding:.2rem 0;color:var(--ink)}
+.ed-sm i{flex:none;width:10px;height:10px;border-radius:50%}.ed-sm span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ed-sm b{font-weight:800}
+.ed-goal{display:flex;align-items:center;gap:.7rem;padding:.4rem 0}
+.ed-gd{flex:none;width:46px;text-align:center;line-height:1;color:var(--pu);font:800 1.15rem 'Baloo Da 2','Hind Siliguri',sans-serif}
+.ed-gd small{display:block;font-size:.62rem;font-weight:700;opacity:.85;margin-top:.15rem}
+.ed-bar{height:7px;border-radius:9px;background:var(--ch);overflow:hidden;margin-top:.3rem}.ed-bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#8b5cf6,#ec6fb5)}
+.ed-cta{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;border-radius:20px;background:linear-gradient(120deg,#6d3fd8,#c2449f);color:#fff!important;text-decoration:none;font-weight:700}
+.ed-cta b{display:block;font-size:1.02rem;color:#fff}.ed-cta small{display:block;opacity:.9;font-weight:500;font-size:.82rem}
+.ed-cta span{margin-left:auto;font-size:1.3rem}
+.ed-wn{margin:.5rem .2rem 0;padding:.55rem .8rem;border-radius:14px;background:#fff4e5;color:#8a4b0f;font-size:.82rem;line-height:1.5}
+html[data-theme=dark] .ed-wn{background:#3b2a12;color:#fcd9a0}
+.ed-ft{margin:.3rem .3rem 0;color:var(--mu2);font-size:.74rem;line-height:1.5}
+@container (max-width:619px){.ed-act{width:100%}.ed-act>*{flex:1}}
+@media print{body.ed-print *{visibility:hidden!important}body.ed-print .ed,body.ed-print .ed *{visibility:visible!important}body.ed-print .ed{position:absolute;left:0;top:0;width:100%;box-shadow:none}body.ed-print .ed-act{display:none}}
+@media(prefers-reduced-motion:reduce){.ed-ln{animation:none;stroke-dashoffset:0}}
+
+/* ----- entry gate / name / Ishan welcome ----- */
+html.eg-lock,html.eg-lock body{overflow:hidden}
+.eg{position:fixed;inset:0;z-index:100000;display:grid;padding:1rem;overflow:auto;-webkit-overflow-scrolling:touch;background:radial-gradient(80% 55% at 12% 0,#c9ccfb,transparent 70%),radial-gradient(70% 55% at 100% 100%,#f8c5ee,transparent 70%),#efe9ff;opacity:0;transition:opacity .25s;font-family:'Hind Siliguri',system-ui,sans-serif}
+.eg.on{opacity:1}
+.eg-c{width:min(440px,100%);margin:auto;padding:1.5rem 1.2rem 1.2rem;border-radius:30px;background:rgba(255,255,255,.93);border:1px solid #fff;box-shadow:0 30px 60px -32px rgba(91,52,201,.55);text-align:center;color:#1d1840}
+.eg-c.pop{animation:egp .28s ease-out both}
+@keyframes egp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eg-lg{display:flex;justify-content:center;margin:0 0 .6rem}.eg-lg .mlogo{width:170px!important;height:auto;animation:none!important}
+.eg-c h2{margin:.2rem 0 .3rem;font:800 1.5rem/1.3 'Baloo Da 2','Hind Siliguri',sans-serif;color:inherit;border:0;padding:0}
+.eg-c p{margin:0 0 1rem;line-height:1.65;font-size:.95rem;opacity:.85;color:inherit}
+.eg-b{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;min-height:58px;margin:0 0 .6rem;padding:.55rem 1rem;border-radius:18px;border:1.5px solid transparent;font:700 1.02rem/1.25 'Hind Siliguri',system-ui,sans-serif;cursor:pointer;text-decoration:none}
+.eg-b small{font-weight:500;font-size:.78rem;opacity:.85}
+.eg-b.dk{background:#0e0c1f;color:#fff}
+.eg-b.gr{background:linear-gradient(120deg,#6d3fd8,#c2449f);color:#fff;box-shadow:0 14px 26px -14px #c2449f}
+.eg-b.gh{background:transparent;border-color:#cfc6f2;color:inherit}
+.eg-or{display:flex;align-items:center;gap:.7rem;margin:.2rem 0 .7rem;color:#6f6a96;font-size:.82rem}.eg-or::before,.eg-or::after{content:"";flex:1;height:1px;background:#e1dbf7}
+#eg-gb{display:flex;justify-content:center;min-height:44px;margin:0 0 .6rem}
+.eg-pm{display:inline-block;margin:.1rem 0 .2rem;font-size:.86rem;font-weight:700;color:#7c4ddb;text-decoration:none}
+.eg-ig{display:inline-block;margin-top:.3rem;font-size:.82rem;color:inherit;opacity:.75}
+.eg-bub{display:flex;gap:.7rem;align-items:flex-start;text-align:left;margin:0 0 1rem}
+.eg-av{flex:none;width:52px;height:52px;border-radius:50%;overflow:hidden;box-shadow:0 8px 18px -8px rgba(99,102,241,.7)}.eg-av svg{display:block;width:100%;height:100%}
+.eg-tx{position:relative;padding:.7rem .9rem;border-radius:4px 18px 18px 18px;background:#f1ecff;font-size:.95rem;line-height:1.65;color:#1d1840}
+.eg-tx b{font-weight:800}
+.eg-in{width:100%;height:56px;margin:0 0 .7rem;padding:0 1rem;border-radius:16px;border:2px solid #d9d2f5;background:#fff;color:#1d1840;text-align:center;font:600 1.1rem 'Hind Siliguri',system-ui,sans-serif;outline:0}
+.eg-in:focus{border-color:#7c4ddb;box-shadow:0 0 0 4px rgba(124,77,219,.18)}
+.eg-er{min-height:1.2em;margin:-.3rem 0 .5rem;color:#b3261e;font-size:.85rem}
+.eg-sk{background:none;border:0;color:inherit;opacity:.7;font:600 .9rem 'Hind Siliguri',system-ui,sans-serif;padding:.6rem;cursor:pointer}
+.eg-ul{margin:0 0 1rem;padding:0;list-style:none;text-align:left;font-size:.9rem;line-height:1.5}
+.eg-ul li{padding:.35rem 0 .35rem 1.5rem;position:relative}.eg-ul li::before{content:"✓";position:absolute;left:0;color:#7c4ddb;font-weight:800}
+@media(prefers-reduced-motion:reduce){.eg,.eg-c.pop{transition:none;animation:none}}

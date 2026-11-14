@@ -1,0 +1,29 @@
+/* classic mode: no decorative motion anywhere */
+*,*::before,*::after{animation-duration:.001s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important;scroll-behavior:auto!important}
+.rv,.rv.in,.enter,.enter>*{opacity:1!important;transform:none!important}
+body::before,body::after,.hx-bg .ab,.hx-bg .orb,.hx-bg .tw,.hx-bt,.ia-dot,.cf,.rip,.u-rip{display:none!important}
+/* ===== classic flat look: solid colours, thin borders, no glow/blur/shadow ===== */
+*,*::before,*::after{box-shadow:none!important;text-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;will-change:auto!important}
+html[lang][lang][lang]:not([data-theme=dark]) body{background:#f7f4ec!important;background-image:none!important;color:#1b1b2f}
+html[lang][lang][lang]:not([data-theme=dark]) body .card,html[lang][lang][lang]:not([data-theme=dark]) body .px-card{background:#fffefb!important;border:1px solid #d9cfb4!important;border-radius:12px!important}
+/* subject / mode tiles: one solid colour each */
+html[lang][lang][lang] body .sj,html[lang][lang][lang] body .sx,html[lang][lang][lang] body .md,html[lang][lang][lang] body .wz-b,html[lang][lang][lang] body .gd-c{background-image:none!important;background-color:var(--g1,var(--c1,#14213d))!important;border-radius:12px!important}
+html[lang][lang][lang] body .sj::before,html[lang][lang][lang] body .sj::after,html[lang][lang][lang] body .sx::before,html[lang][lang][lang] body .sx::after,html[lang][lang][lang] body .md::before,html[lang][lang][lang] body .md::after,html[lang][lang][lang] body .wz-b::before,html[lang][lang][lang] body .wz-b::after,html[lang][lang][lang] body .sj-spot,html[lang][lang][lang] body .md-spot,html[lang][lang][lang] body .sj-gl,html[lang][lang][lang] body .wz-gl,html[lang][lang][lang] body .md-art{display:none!important}
+/* buttons */
+html[lang][lang][lang] body :is(button.p,a.btn.p,.wz-go .p,.dock .p,.hx .hx-b){background:#14213d!important;background-image:none!important;color:#fff!important;border:0!important;border-bottom:3px solid #b8912f!important;border-radius:10px!important}
+html[lang][lang][lang] body :is(.wz-go .p,.hx .hx-b) *{color:#fff!important;stroke:#fff!important}
+html[lang][lang][lang] body .wz-go{background:#fffefb!important;border:1px solid #d9cfb4!important;border-radius:12px!important}
+/* wizard steps + number chips: calm navy, no rainbow */
+html[lang][lang][lang]:not([data-theme=dark]) body .wz-st span{background:#efe9d8!important;color:#14213d!important;border:1px solid #d9cfb4!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .wz-st span.on,html[lang][lang][lang]:not([data-theme=dark]) body .wz-n.on,html[lang][lang][lang]:not([data-theme=dark]) body .wz-y.on{background:#14213d!important;color:#fff!important;border-color:#14213d!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .wz-st span.dn{background:#e3efe6!important;color:#14632f!important;border-color:#14632f!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .wz-h i{background:#14213d!important;color:#e2c26b!important}
+html[lang][lang][lang]:not([data-theme=dark]) body :is(.wz-n,.wz-y){background:#fffefb!important;border:1.5px solid #cdbf98!important;--bc:#14213d;color:#14213d!important;border-radius:10px!important}
+html[lang][lang][lang]:not([data-theme=dark]) body :is(.wz-n,.wz-y) :is(b,small){color:inherit!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .wz-go{background:#fffefb!important;border:1px solid #d9cfb4!important}
+/* exam options: clear selected state without glow */
+html[lang][lang][lang] body .mopt{border-radius:10px!important}
+html[lang][lang][lang] body .mopt.sel,html[lang][lang][lang] body .mopt.ok,html[lang][lang][lang] body .mopt.err{outline:2px solid #14213d;outline-offset:-2px}
+html[lang][lang][lang] body .mopt.ok{outline-color:#157347}body .mopt.err{outline-color:#b3261e}
+/* speed: skip rendering off-screen question cards */
+.mq{content-visibility:auto;contain-intrinsic-size:auto 340px}

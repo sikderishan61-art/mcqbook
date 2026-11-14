@@ -1,0 +1,67 @@
+/* ===== MCQBook text + phone smoothness fix =====
+   1 one clean Bengali font family everywhere (no mixed serif/sans)
+   2 no letter-spacing on Bengali (it breaks joined letters)
+   3 roomy line-height so matras/ukars are never cut
+   4 words wrap at spaces, not in the middle of a word
+   5 no tiny text on phones
+   6 instant touch response + gentle press feedback */
+:root{--bn:'Hind Siliguri','Noto Sans Bengali','Kohinoor Bangla','Bangla Sangam MN','Nirmala UI',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--bnh:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali','Kohinoor Bangla','Bangla Sangam MN','Nirmala UI',system-ui,sans-serif}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;text-rendering:optimizeLegibility;scroll-padding-top:70px}
+html[lang][lang][lang][lang][lang] body{font-family:var(--bn)!important;font-kerning:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.7;font-size:16px}
+
+/* 1) fonts */
+html[lang][lang][lang][lang][lang] body *:not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig):not(svg):not(svg *):not(h1):not(h2):not(h3):not(h4):not(.hx-h):not(.hx-h *),
+html[lang][lang][lang][lang][lang] body *::before,html[lang][lang][lang][lang][lang] body *::after{font-family:var(--bn)!important}
+html[lang][lang][lang][lang][lang] body :is(h1,h2,h3,h4,.hx-h,.hx-h *,.ob-o b,.md b,.sj b,.wz-b b):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig){font-family:var(--bnh)!important;font-weight:700;font-style:normal}
+html[lang][lang][lang][lang][lang] body :is(em,i,cite,address){font-style:normal}
+html[lang][lang][lang][lang][lang] body .fsig{font-family:'Galada','Baloo Da 2',cursive!important}
+html[lang][lang][lang][lang][lang] body input,html[lang][lang][lang][lang][lang] body textarea,html[lang][lang][lang][lang][lang] body select,html[lang][lang][lang][lang][lang] body button{font-family:var(--bn)!important}
+
+/* 2) letter-spacing */
+html[lang][lang][lang][lang][lang] body *:not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig),html[lang][lang][lang][lang][lang] body *::before,html[lang][lang][lang][lang][lang] body *::after{letter-spacing:0!important}
+
+/* 3) line-height: Bengali needs room above and below */
+html[lang][lang][lang][lang][lang] body :is(p,li,span,small,b,strong,a,label,button,div,td,th,summary,figcaption):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig):not(.apq-x):not(.ia-x):not(.moti-e):not(.ring):not(.big):not(.pm-price):not(.pm-pr):not(.ed-gd):not(.sx-gl):not(.ed-new i):not(.cal button):not(.qn button):not(.mopt .lt):not(.ic){line-height:1.55}
+html[lang][lang][lang][lang][lang] body :is(h1,h2,h3,h4):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig){line-height:1.4;padding-block:.04em}
+html[lang][lang][lang][lang][lang] body :is(p,li,.d,.fsub):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig){line-height:1.7}
+html[lang][lang][lang][lang][lang] body :is(button,.btn,.chip,.tag,.src,nav.nv a,.sl):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig):not(.apq-x):not(.ia-x):not(.moti-e):not(.ring):not(.big):not(.pm-price):not(.pm-pr):not(.ed-gd):not(.sx-gl):not(.ed-new i):not(.cal button):not(.qn button):not(.mopt .lt):not(.ic){line-height:1.45}
+
+/* 4) wrapping */
+html[lang][lang][lang][lang][lang] body *{overflow-wrap:break-word!important;word-break:normal!important;hyphens:manual}
+html[lang][lang][lang][lang][lang] body :is(.ia-m,.mq,.mqt,.mopt .tx,.mopt span){word-break:normal!important}
+html[lang][lang][lang][lang][lang] body :is(h1,h2,h3,h4,.d,small,.tag,.chip,button,.btn,nav.nv a){text-wrap:balance}
+html[lang][lang][lang][lang][lang] body :is(p,li,.mu){text-wrap:pretty}
+html[lang][lang][lang][lang][lang] body :is(.row>*,.tl>*,.mopt>*,.opt>*,.dock>*,.wz-sum,.grow,.pc,.ob-o>*,.hb>*,.card>*){min-width:0}
+
+/* 5) no tiny text */
+html[lang][lang][lang][lang][lang] body :is(small,.tag,.src,.ob-k,.fk,.hb-k,.sl,.unl,.pm-k,.pm-tier,.tile small,.pc small,aside small,nav.nv a span):not(.plogo):not(.plogo *):not(.pm-tok):not(.fsig){font-size:max(.78rem,12.5px)!important}
+html[lang][lang][lang][lang][lang] body nav.nv a .sl,html[lang][lang][lang][lang][lang] body nav.nv a span{font-size:12.5px!important;line-height:1.35!important}
+
+/* 6) phone feel */
+html[lang][lang][lang][lang][lang] body{-webkit-tap-highlight-color:transparent;overscroll-behavior-x:none}
+html[lang][lang][lang][lang][lang] body :is(a,button,.btn,.chip,.mopt,.opt,.sj,.sx,.md,.qa,.wz-b,.gd-c,.wz-n,.wz-y,nav.nv a,label,summary,[role=button]){touch-action:manipulation}
+html[lang][lang][lang][lang][lang] body :is(button,.btn,nav.nv a,.dock,#topline,.chip,.tag){-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+html[lang][lang][lang][lang][lang] body :is(#topline,nav.nv,aside,.mq,.ctl){-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;scrollbar-width:none}
+html[lang][lang][lang][lang][lang] body :is(#topline,nav.nv,aside,.mq,.ctl)::-webkit-scrollbar{display:none}
+html[lang][lang][lang][lang][lang] body:not(.xrun) :is(button,.btn,.chip,.mopt,.opt,.sj,.sx,.md,.qa,.wz-b,.gd-c,.wz-n,.wz-y,nav.nv a){transition:transform .1s ease-out,background-color .14s ease,border-color .14s ease,color .14s ease!important}
+html[lang][lang][lang][lang][lang] body:not(.xrun) :is(button,.btn,.chip,.mopt,.opt,.sj,.sx,.md,.qa,.wz-b,.gd-c,.wz-n,.wz-y,nav.nv a):not(:disabled):active{transform:scale(.97)!important}
+#seo-static{content-visibility:auto;contain-intrinsic-size:auto 900px}
+@media(max-width:480px){
+ html[lang][lang][lang][lang][lang] body main,html[lang][lang][lang][lang][lang] body #app{padding-inline:max(.7rem,env(safe-area-inset-left,0px))}
+ html[lang][lang][lang][lang][lang] body h1{font-size:clamp(1.45rem,6.4vw,1.9rem)}
+ html[lang][lang][lang][lang][lang] body h2{font-size:clamp(1.2rem,5.4vw,1.5rem)}
+}
+@media(prefers-reduced-motion:reduce){html[lang][lang][lang][lang][lang] body *{transition:none!important;animation:none!important}}
+/* ===== bigger question text + more attractive, still-flat (fast) option cards ===== */
+html[lang][lang][lang][lang][lang] body p.mqt,html[lang][lang][lang][lang][lang] body p.mqt b{font-size:clamp(1.18rem,4.6vw,1.34rem)!important;line-height:1.65!important;font-weight:700!important;color:var(--pr,#14213d)!important;margin-bottom:.1rem!important}
+
+html[lang][lang][lang][lang][lang] body .mopts{gap:.7rem!important}
+html[lang][lang][lang][lang][lang] body .mopt{padding:1rem 1.05rem!important;border-radius:18px!important;border-width:2px!important;border-color:#d7cda9!important;background:#fffefb!important;box-shadow:0 3px 12px -6px rgba(20,33,61,.22)!important;gap:.9rem!important}
+html[lang][lang][lang][lang][lang] body .mopt .tx{font-size:1.08rem!important;font-weight:600!important;color:#1b1b2f!important}
+html[lang][lang][lang][lang][lang] body .mopt .lt{width:42px!important;height:42px!important;font-size:1.08rem!important;border-radius:13px!important;background:linear-gradient(145deg,#fef3c7,#fcd979)!important;border:1.5px solid #e2c26b!important;color:#7a4a00!important;font-weight:800!important}
+html[lang][lang][lang][lang][lang] body .mopt:not(.sel):not(.ok):not(.err):hover{background:#fff8e8!important;border-color:#e2c26b!important}
+html[lang][lang][lang][lang][lang] body .mopt.sel{background:linear-gradient(135deg,#eaf1ff,#dbe6ff)!important;border-color:#1e3a8a!important;border-left-width:6px!important;box-shadow:0 4px 16px -6px rgba(30,58,138,.35)!important}
+html[lang][lang][lang][lang][lang] body .mopt.sel .tx{color:#14213d!important;font-weight:700!important}
+html[lang][lang][lang][lang][lang] body .mopt.sel .lt{background:linear-gradient(145deg,#1e3a8a,#14213d)!important;border-color:#14213d!important;color:#fff!important}
+html[lang][lang][lang][lang][lang] body .mopt.ok{border-left-width:6px!important;box-shadow:0 4px 16px -6px rgba(21,115,71,.35)!important}
+html[lang][lang][lang][lang][lang] body .mopt.err{border-left-width:6px!important;box-shadow:0 4px 16px -6px rgba(153,27,27,.35)!important}

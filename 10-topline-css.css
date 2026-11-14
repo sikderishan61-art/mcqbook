@@ -1,0 +1,11 @@
+#topline{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:.5rem;padding:.35rem 118px .35rem .6rem;background:linear-gradient(100deg,#070b1c,#1e1b6b 60%,#3b1a6e);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,transparent,#e2c26b,#fff3c4,#e2c26b,transparent) 1;box-shadow:0 8px 22px -12px rgba(8,12,40,.8);font-family:'Hind Siliguri',system-ui,sans-serif}
+#topline .tl-s{display:flex;gap:.4rem;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;flex:1;min-width:0;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent);padding-right:1rem}
+#topline .tl-s::-webkit-scrollbar{display:none}
+#topline a,#topline button{flex:none;scroll-snap-align:start;display:inline-flex;align-items:center;gap:.35rem;min-height:38px;padding:.3rem .85rem;border-radius:99px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#e8ecff;font:600 .88rem/1 'Hind Siliguri',system-ui,sans-serif;text-decoration:none;white-space:nowrap;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:background .2s,transform .15s}
+#topline a:active,#topline button:active{transform:scale(.95)}
+#topline a svg,#topline button svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+#topline a.on{background:#fff;color:#14213d;border-color:#fff;font-weight:700}
+#topline a.pro{background:linear-gradient(135deg,#fff3c4,#e2c26b 55%,#b8912f);color:#2a1d00;border-color:transparent;font-weight:800;box-shadow:0 6px 14px -6px #e2c26b}
+#topline button.ins{background:linear-gradient(110deg,#7c3aed,#db2777);border-color:rgba(255,255,255,.35);color:#fff;font-weight:700}
+@media(min-width:860px){#topline{position:static;justify-content:center;padding:.45rem 200px .45rem 1rem}#topline .tl-s{flex:0 1 auto;-webkit-mask-image:none;mask-image:none;padding:0}#topline a:hover,#topline button:hover{background:rgba(255,255,255,.18)}#topline a.on:hover{background:#fff}}
+@media(prefers-reduced-motion:reduce){#topline a,#topline button{transition:none}}

@@ -1,0 +1,20 @@
+/* ===== calm solving mode + wizard bar fix ===== */
+/* "শুরু করো" bar: never floats over the time buttons, text wraps instead of being cut */
+html body .wz-go{position:static!important;bottom:auto!important;margin-top:1.1rem!important;flex-wrap:wrap;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+html body .wz-go .wz-sum{flex:1 1 170px;min-width:0}
+html body .wz-go .wz-sum b{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.4;display:block}
+html body .wz-go .wz-sum small{display:block;line-height:1.4;margin-top:.1rem}
+html body .wz-go .p{flex:0 0 auto}
+html body :is(.wz-tm,.wz-nt) .wz-n,html body :is(.wz-tm,.wz-nt) .wz-n.on{transform:none!important}
+html body :is(.wz-n,.wz-y) small{white-space:normal!important;line-height:1.25;text-align:center;overflow-wrap:anywhere}
+/* click ripple junk is off everywhere */
+.rip,.u-rip{display:none!important}
+/* while solving: no graphics, no motion, nothing floating */
+html{scroll-behavior:auto!important}
+body.xrun,body.xrun *,body.xrun *::before,body.xrun *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.xrun *{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.xrun #topline,body.xrun .ctl,body.xrun #ia,body.xrun .ia-pn,body.xrun .ia-fab,body.xrun .ia-tip,body.xrun a.brand,body.xrun .apq-o,body.xrun .cf,body.xrun ins.adsbygoogle{display:none!important}
+body.xrun .mbar{top:calc(env(safe-area-inset-top,0px) + 6px)!important}
+body.xrun .mq,body.xrun .mbar,body.xrun .dock{box-shadow:none!important;transform:none!important;opacity:1!important}
+body.xrun .mq::before,body.xrun .mq::after,body.xrun .mbar::before,body.xrun .mbar::after{display:none!important}
+body.xrun #app{padding-bottom:160px}

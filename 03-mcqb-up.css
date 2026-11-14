@@ -1,0 +1,72 @@
+/* upgrade layer: additive only */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{overflow-x:clip}
+img,svg,video{max-width:100%}
+:is(a,button,[role=button],.mopt,.opt,.chip,.sx,.md,.px-t,.px-set):focus-visible{outline:3px solid #f59e0b;outline-offset:2px;border-radius:12px}
+@media(pointer:coarse){button,.btn,.mopt,.opt,.chip{min-height:44px}}
+.mopt,.opt,.sx,.md,.btn,button{transition:transform .12s ease,box-shadow .18s ease,background-color .18s ease}
+.mopt:active,.opt:active,.btn:active,button:active{transform:scale(.985)}
+@media(max-width:480px){body{word-break:normal;overflow-wrap:anywhere}}
+/* ===== calm, consistent icon + colour system (overrides only) ===== */
+html body nav.nv{background:#0f1730!important;border-top:1px solid rgba(255,255,255,.08)!important;box-shadow:0 -8px 24px -16px rgba(0,0,0,.6)!important}
+html body nav.nv a{background:transparent!important;box-shadow:none!important;border:0!important;color:#98a4c7!important;transition:color .15s}
+html body nav.nv a .ic,html body nav.nv a .ic *{color:inherit!important;background:none!important;filter:none!important;box-shadow:none!important;stroke:currentColor}
+html body nav.nv a .ic{width:1.45rem!important;height:1.45rem!important;stroke-width:1.8;padding:0!important;border-radius:0!important}
+html body nav.nv a.on{color:#fff!important}
+html body nav.nv a.on .ic{color:#e2c26b!important}
+html body nav.nv a.on::before{content:"";position:absolute;top:0;left:30%;right:30%;height:3px;border-radius:0 0 3px 3px;background:#e2c26b}
+html body nav.nv a{position:relative}
+html body nav.nv a .sl{font-weight:600;font-size:.7rem}
+/* mark-to-remember button: always readable */
+html body .flg{color:var(--tx)!important;background:var(--card)!important;border:1.5px solid var(--bd)!important;box-shadow:none!important;font-weight:700}
+html body .flg .ic{color:#b45309}
+html body .flg.on,html body .flg[aria-pressed=true]{background:#fef3c7!important;border-color:#d97706!important;color:#78350f!important}
+html body .flg.on .ic,html body .flg[aria-pressed=true] .ic{color:#b45309}
+html[data-theme=dark] body .flg{background:#1a2347!important;border-color:#3b4a8a!important;color:#e8ecf8!important}
+html[data-theme=dark] body .flg .ic{color:#fbbf24}
+html[data-theme=dark] body .flg.on,html[data-theme=dark] body .flg[aria-pressed=true]{background:#3b2a07!important;border-color:#f59e0b!important;color:#fde68a!important}
+/* progress track + fill */
+html body .bar{background:#e6e8f0!important;height:8px!important}
+html[data-theme=dark] body .bar{background:#243060!important}
+html body .bar i{background:linear-gradient(90deg,#14213d,#3b5bdb)!important;animation:none!important}
+html[data-theme=dark] body .bar i{background:linear-gradient(90deg,#818cf8,#e2c26b)!important}
+html body .bar i::after{display:none!important}
+/* header: no harsh white strip in dark mode */
+html[data-theme=dark] body .brand{background:#0f1730!important;box-shadow:0 1px 0 rgba(255,255,255,.08)!important;animation:none!important}
+html[data-theme=dark] body .brand img{mix-blend-mode:normal;filter:brightness(0) invert(1)!important}
+/* calmer borders in light mode (were lavender everywhere) */
+html:not([data-theme=dark]){--bd:#e2e0ea}
+/* option letter badge + selected state */
+html body .mopt .lt{font-weight:800}
+/* sticky submit bar must not cover the last line */
+html body .mq-sub,html body [class*=subbar]{padding-bottom:.4rem}
+html:not([data-theme=dark]) body .px-card,html:not([data-theme=dark]) body .card{background:#fff;border:1px solid #e4e2ec;box-shadow:0 1px 2px rgba(20,33,61,.05),0 16px 32px -22px rgba(20,33,61,.28)}
+html body nav.nv a .sl{font-family:'Hind Siliguri',system-ui,sans-serif!important;font-size:.7rem!important;font-weight:600!important}
+/* ===== premium pass 3: refined chips, cards, tiles, controls ===== */
+/* subject marquee pills: quiet outlined chips with a colour dot */
+html body .mq-p{background:var(--card)!important;color:var(--tx)!important;border:1px solid var(--bd)!important;box-shadow:0 1px 2px rgba(20,33,61,.06)!important;padding:.5rem 1rem .5rem .85rem;font-weight:600;gap:.55rem}
+html body .mq-p::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--g1),var(--g2))}
+html body .mq-p:hover{transform:none;border-color:var(--g1)!important;box-shadow:0 6px 16px -10px var(--g1)!important}
+/* subject cards: deeper, calmer colour with a soft base shade */
+html body .sj{border-radius:20px;filter:saturate(.88);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),inset 0 -90px 60px -50px rgba(6,10,28,.5),0 10px 24px -18px rgba(20,33,61,.55)}
+html body .sj .sj-gl{color:rgba(255,255,255,.12)}
+html body .sj-ic{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:14px}
+html body .sj-ic svg,html body .sh-ic svg{animation:none;fill:none;stroke-width:1.7}
+html body .sj-t{font-family:'Baloo Da 2','Hind Siliguri',system-ui,sans-serif!important;font-weight:700}
+/* guide step tiles: no purple/blue gradient, no bobbing */
+html body .pw-ic{background:#eef1fb;color:#14213d;border:1px solid #dbe1f3;animation:none;border-radius:12px}
+html[data-theme=dark] body .pw-ic{background:#1d2650;color:#e2c26b;border-color:#34417a}
+html body .pw-ic svg{stroke-width:1.8}
+html body .pw-l a{border-radius:16px;box-shadow:0 1px 2px rgba(20,33,61,.05)}
+html body .pw-l a::after{background:#e2c26b}
+html body .pw-n{opacity:.07}
+/* top floating controls: clean square buttons, no neon */
+html body .ctl button{border:1px solid var(--bd)!important;background:var(--card)!important;color:var(--tx)!important;box-shadow:0 2px 8px -4px rgba(20,33,61,.3)!important;border-radius:12px!important}
+html body .ctl button.apq-th{border-radius:99px!important;border:1px solid var(--bd)!important;background:var(--card)!important;padding:3px!important}
+html body .ctl button svg{stroke:currentColor}
+html body .ctl .th-k{box-shadow:none}
+html body .ctl .th-t{background:#e6e8f2!important;box-shadow:none!important}
+html[data-theme=dark] body .ctl .th-t{background:#243060!important}
+html body .ctl .th-k{background:#fff!important}
+html[data-theme=dark] body .ctl .th-k{background:#0f1730!important}
+html body .pm-tier.free{background:var(--card);border:1px solid var(--bd);color:var(--mu);font-weight:700}

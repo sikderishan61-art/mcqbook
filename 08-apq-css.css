@@ -1,0 +1,56 @@
+.apq-o{position:fixed;inset:0;z-index:100001;display:grid;place-items:center;padding:1rem;background:rgba(7,11,31,.62);animation:apqf .3s both}
+@keyframes apqf{from{opacity:0}}
+@keyframes apqu{from{opacity:0;transform:translateY(28px) scale(.97)}}
+.apq-c{position:relative;width:min(420px,100%);max-height:calc(100dvh - 2rem);overflow:auto;padding:1.5rem 1.2rem 1.1rem;border-radius:26px;text-align:center;color:#fff;font-family:inherit;background:radial-gradient(120% 90% at 100% 0,rgba(124,58,237,.4),transparent 60%),linear-gradient(160deg,#14213d,#0b1226);border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 60px -20px rgba(0,0,0,.7);animation:apqu .4s cubic-bezier(.2,.8,.2,1) both}
+.apq-x{position:absolute;top:.6rem;right:.6rem;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.12);color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}
+.apq-i{width:68px;height:68px;margin:0 auto .7rem;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#1a1203;box-shadow:0 12px 26px -10px #f59e0b}
+.apq-i svg{width:34px;height:34px}
+.apq-c h3{margin:.1rem 0 .35rem;font-size:1.3rem;color:#fff}
+.apq-c p{margin:0 0 1.1rem;opacity:.85;line-height:1.6;color:#fff;font-size:.95rem}
+.apq-c .apq-b{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.85rem;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;border:0;text-decoration:none;font-family:inherit;box-sizing:border-box}
+.apq-b svg{width:20px;height:20px;flex:none}
+.apq-b small{font-weight:600;opacity:.75;font-size:.78rem}
+.apq-dl{color:#1a1203;background:linear-gradient(135deg,#fde68a,#f59e0b);box-shadow:0 14px 26px -12px #f59e0b}
+.apq-pw{margin-top:.55rem;background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;border:0!important}
+.apq-pws{display:none;margin:.7rem 0 0;padding:.75rem .9rem;border-radius:14px;background:rgba(255,255,255,.08);text-align:left;font-size:.88rem;line-height:1.7;color:#fff}.apq-pws.on{display:block}.apq-pws b{color:#fde68a}
+.apq-apk{margin-top:.55rem;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28)!important}
+.apq-hm a.apq-apk{margin-top:0;color:#fff!important}
+.apq-br{margin-top:.55rem;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.22)!important}
+.apq-ig{margin-top:.55rem;color:#fff;background:linear-gradient(45deg,#f9a03f,#e1306c,#833ab4)}
+.apq-st{display:none;margin:.9rem 0 0;padding:.75rem .9rem;border-radius:14px;background:rgba(255,255,255,.08);text-align:left;font-size:.88rem;line-height:1.7;color:#fff}
+.apq-st b{color:#fde68a}
+.apq-st ol{margin:.3rem 0 0;padding-left:1.2rem}
+.apq-o.dl .apq-st{display:block}
+.apq-note{margin-top:.8rem;font-size:.75rem;opacity:.6;color:#fff}
+.apq-ctl{display:inline-flex}
+@media(prefers-reduced-motion:reduce){.apq-o,.apq-c{animation:none}}
+.ctl button.apq-th,html[data-theme] .ctl button.apq-th{padding:3px;border:0;background:none;box-shadow:none;color:inherit}
+.th-t{display:block;position:relative;width:56px;height:30px;border-radius:99px;background:linear-gradient(135deg,#7dd3fc,#fde68a);box-shadow:inset 0 0 0 1.5px rgba(0,0,0,.14),0 6px 14px -8px rgba(0,0,0,.55);transition:background .3s}
+.th-k{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;color:#f59e0b;display:grid;place-items:center;box-shadow:0 2px 6px rgba(0,0,0,.3);transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,color .3s}
+.ctl .th-k svg{width:15px;height:15px}
+html[data-theme=dark] .th-t{background:linear-gradient(135deg,#1e1b4b,#4338ca)}
+html[data-theme=dark] .th-k{transform:translateX(26px);background:#0b1226;color:#fde68a}
+#app .pm-ban span.hx-app{margin:1rem 0 0;cursor:pointer;background:linear-gradient(45deg,#7c3aed,#db2777)!important;color:#fff!important;border:1px solid rgba(255,255,255,.4)!important;flex:1 1 100%;display:flex;align-items:center;justify-content:center;gap:.55rem;box-sizing:border-box;padding:.85rem 1.2rem;border-radius:14px;font-weight:800;text-align:center;line-height:1.35;color:#fff!important;text-decoration:none!important;background:linear-gradient(45deg,#7c3aed,#db2777);border:1px solid rgba(255,255,255,.35);box-shadow:0 14px 26px -14px #db2777}
+.pm-ban .hx-app svg{color:#fff;width:20px;height:20px;flex:none}
+.pm-ban .hx-app small{color:#fff;display:block;font-weight:600;opacity:.85;font-size:.78rem}
+.apq-hm{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin:1rem auto;padding:1rem 1.1rem;border-radius:22px;color:#fff;background:radial-gradient(120% 120% at 100% 0,rgba(124,58,237,.4),transparent 60%),linear-gradient(160deg,#14213d,#0b1226);border:1px solid rgba(226,194,107,.35);box-shadow:0 14px 30px -16px rgba(20,33,61,.6);max-width:1100px}
+.apq-hm .t{flex:1 1 220px;min-width:0}.apq-hm b{display:block;font-size:1.1rem;color:#fff}.apq-hm span.s{display:block;font-size:.88rem;opacity:.82;margin-top:.15rem;color:#fff}
+.apq-hm .a{display:flex;gap:.5rem;flex-wrap:wrap;flex:1 1 260px}
+.apq-hm a.apq-b{display:flex;align-items:center;justify-content:center;gap:.5rem;box-sizing:border-box;width:auto;flex:1 1 140px;padding:.7rem .9rem;font-size:.92rem;font-weight:800;border-radius:14px;text-decoration:none!important;border:0;line-height:1.2}
+.apq-hm a.apq-dl{color:#1a1203!important}.apq-hm a.apq-ig{color:#fff!important}.apq-hm a.apq-b span{text-decoration:none!important;color:inherit}
+.apq-hm .apq-ig{margin-top:0}
+.apq-hm .i{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#1a1203}.apq-hm .i svg{width:26px;height:26px}
+/* --- install button is the main focus; APK / browser / Instagram are secondary --- */
+@keyframes apqp{0%{box-shadow:0 0 0 0 rgba(245,158,11,.65),0 14px 26px -12px #f59e0b}70%{box-shadow:0 0 0 16px rgba(245,158,11,0),0 14px 26px -12px #f59e0b}100%{box-shadow:0 0 0 0 rgba(245,158,11,0),0 14px 26px -12px #f59e0b}}
+.apq-rec{display:inline-block;margin:0 0 .5rem;padding:.25rem .7rem;border-radius:99px;background:rgba(253,230,138,.16);border:1px solid rgba(253,230,138,.5);color:#fde68a;font-size:.74rem;font-weight:800;letter-spacing:.01em}
+.apq-c .apq-main,.apq-hm .apq-main{padding:1.1rem .9rem;font-size:1.18rem;font-weight:900;border-radius:18px;background:linear-gradient(135deg,#fef08a,#f59e0b 55%,#f97316);color:#1a1203!important;animation:apqp 1.8s ease-out infinite;transform:scale(1.02)}
+.apq-c .apq-main svg,.apq-hm .apq-main svg{width:24px;height:24px}
+.apq-c .apq-main small,.apq-hm .apq-main small{display:block;font-size:.74rem;font-weight:700;opacity:.8}
+.apq-c .apq-main span,.apq-hm .apq-main span{display:flex;flex-direction:column;align-items:center;line-height:1.25}
+.apq-c .apq-apk{margin-top:.9rem;padding:.6rem;font-size:.82rem;font-weight:600;background:transparent;color:rgba(255,255,255,.7);border:1px dashed rgba(255,255,255,.3)!important;border-radius:12px}
+.apq-c .apq-br{margin-top:.5rem;padding:.5rem;font-size:.78rem;font-weight:500;background:transparent;color:rgba(255,255,255,.55);border:0!important;text-decoration:underline}
+.apq-c .apq-ig{margin-top:.2rem;padding:.55rem;font-size:.8rem;font-weight:600;opacity:.8}
+.apq-hm .apq-main{flex:2 1 220px}
+.apq-hm a.apq-apkh{flex:0 1 auto;padding:.55rem .75rem;font-size:.78rem;font-weight:600;background:transparent;border:1px dashed rgba(255,255,255,.35)!important;opacity:.8}
+.apq-hm a.apq-ig{flex:0 1 auto;padding:.55rem .75rem;font-size:.78rem;font-weight:600;opacity:.8}
+@media(prefers-reduced-motion:reduce){.apq-c .apq-main,.apq-hm .apq-main{animation:none}}

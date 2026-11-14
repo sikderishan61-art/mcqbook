@@ -1,0 +1,10 @@
+.fso{position:fixed;inset:0;z-index:100000;display:grid;place-items:end center;padding:1rem;background:rgba(7,11,31,.55);backdrop-filter:blur(6px);animation:fsf .3s both}
+@keyframes fsf{from{opacity:0}}
+.fsc{width:min(440px,100%);margin-bottom:max(1rem,env(safe-area-inset-bottom));padding:1.4rem 1.2rem 1.1rem;border-radius:26px;text-align:center;color:#fff;background:radial-gradient(120% 120% at 100% 0,#7c3aed66,transparent 60%),linear-gradient(135deg,#14213d,#2a3f78);box-shadow:0 30px 60px -20px #000,inset 0 0 0 1.5px rgba(255,255,255,.2);animation:fsu .45s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes fsu{from{opacity:0;transform:translateY(40px) scale(.96)}}
+.fsc .fi{width:62px;height:62px;margin:0 auto .6rem;border-radius:20px;display:grid;place-items:center;background:linear-gradient(135deg,#fde68a,#f59e0b);color:#1a1203;animation:gl 2.4s infinite}.fsc .fi svg{width:30px;height:30px}
+.fsc h3{margin:.1rem 0 .3rem;font-size:1.3rem;color:#fff}.fsc p{margin:0 0 1rem;opacity:.85;line-height:1.6;color:#fff}
+.fsc button{display:block;width:100%;padding:.85rem;border-radius:14px;font-weight:800;font-size:1rem;cursor:pointer;border:0}
+.fsc .y{color:#1a1203;background:linear-gradient(135deg,#fde68a,#f59e0b);box-shadow:0 14px 26px -12px #f59e0b}
+.fsc .n{margin-top:.5rem;background:transparent;color:#cbd5e1;font-weight:600}
+html:fullscreen,html:-webkit-full-screen{background:#fff;overflow-y:auto}html[data-theme=dark]:fullscreen,html[data-theme=dark]:-webkit-full-screen{background:#0a0f1f}

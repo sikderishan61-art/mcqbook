@@ -1,0 +1,43 @@
+/* goal buttons: light cards, dark readable text */
+html[lang][lang][lang]:not([data-theme=dark]) body .gd-c{background:#fff!important;background-image:none!important;border:2px solid #1e3a8a!important;border-radius:12px!important;color:#0f1b3d!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .gd-c small{color:#4a5160!important;font-weight:600}
+html[lang][lang][lang]:not([data-theme=dark]) body .gd-c span{color:#1e3a8a!important;font-weight:700}
+html[lang][lang][lang]:not([data-theme=dark]) body .gd-c *{opacity:1!important}
+/* mode cards: no number badge/art sitting on the title */
+html[lang][lang][lang]:not([data-theme=dark]) body .md .md-no,html[lang][lang][lang]:not([data-theme=dark]) body .md .md-art,html[lang][lang][lang]:not([data-theme=dark]) body .md .md-spot{display:none!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .md{padding:1rem 1rem 1.1rem!important;display:flex!important;flex-direction:column;gap:.4rem;border:0!important}
+html[lang][lang][lang]:not([data-theme=dark]) body .md b{font-size:1.15rem;line-height:1.35}
+html[lang][lang][lang]:not([data-theme=dark]) body .md .d{color:#fff!important;opacity:.95;font-weight:500;line-height:1.5}
+html[lang][lang][lang]:not([data-theme=dark]) body .md .md-n{background:rgba(255,255,255,.22)!important;border:1px solid rgba(255,255,255,.7)!important;color:#fff!important;align-self:flex-start}
+html[lang][lang][lang]:not([data-theme=dark]) body .md .go{color:#fff!important;font-weight:700;font-style:normal}
+/* top bar: solid, nothing shows through it */
+html[lang][lang][lang] body #topline{background:#f3eddc!important;background-image:none!important;border-bottom:2px solid #1e3a8a!important;border-image:none!important;opacity:1!important}
+html[lang][lang][lang] body #topline::before,html[lang][lang][lang] body #topline::after{display:none!important}
+html[lang][lang][lang]:not([data-theme=dark]) body #topline a:not(.ins){background:#fff!important;border:1.5px solid #1e3a8a!important;color:#1e3a8a!important}
+/* ===== traditional Bengali / Indian ornament: tiny static SVG, zero JS, near-zero load ===== */
+html[lang][lang][lang] body *{box-shadow:none!important}
+html[lang][lang][lang] body :is(.sj,.sx,.md,.wz-b,.card,.mq){box-shadow:none!important}
+/* question cards: ornamental border strip on top + diamond divider under the question */
+html[lang][lang][lang] body .mq{position:relative;padding-top:1.7rem!important;border-left:4px solid #7a1f35!important;overflow:hidden}
+html[lang][lang][lang] body .mq::before{content:"";display:block!important;position:absolute;left:0;right:0;top:0;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Crect width='24' height='10' fill='%237a1f35'/%3E%3Cpath d='M12 1.2 17.2 5 12 8.8 6.8 5Z' fill='%23e2c26b'/%3E%3Cpath d='M12 3.2 14.2 5 12 6.8 9.8 5Z' fill='%237a1f35'/%3E%3Ccircle cx='0' cy='5' r='1.6' fill='%23e2c26b'/%3E%3Ccircle cx='24' cy='5' r='1.6' fill='%23e2c26b'/%3E%3C/svg%3E") repeat-x;background-size:24px 10px}
+html[lang][lang][lang] body .mqt::after{content:"";display:block;height:14px;margin:.7rem auto .2rem;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='14' viewBox='0 0 220 14'%3E%3Cpath d='M0 7H88M132 7H220' stroke='%23b8912f' stroke-width='1.5'/%3E%3Cpath d='M110 1 119 7 110 13 101 7Z' fill='%237a1f35' stroke='%23b8912f' stroke-width='1.2'/%3E%3Ccircle cx='94' cy='7' r='2.2' fill='%23b8912f'/%3E%3Ccircle cx='126' cy='7' r='2.2' fill='%23b8912f'/%3E%3C/svg%3E") no-repeat center;background-size:220px 14px;max-width:100%}
+/* page cards and headings */
+html[lang][lang][lang] body .px-card{position:relative;padding-top:1.7rem!important;overflow:hidden}
+html[lang][lang][lang] body .px-card::before{content:"";display:block!important;position:absolute;left:0;right:0;top:0;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Crect width='24' height='10' fill='%237a1f35'/%3E%3Cpath d='M12 1.2 17.2 5 12 8.8 6.8 5Z' fill='%23e2c26b'/%3E%3Cpath d='M12 3.2 14.2 5 12 6.8 9.8 5Z' fill='%237a1f35'/%3E%3Ccircle cx='0' cy='5' r='1.6' fill='%23e2c26b'/%3E%3Ccircle cx='24' cy='5' r='1.6' fill='%23e2c26b'/%3E%3C/svg%3E") repeat-x!important;background-size:24px 10px;opacity:1!important}
+html[lang][lang][lang] body #app h1::after{content:"";display:block;height:14px;margin:.35rem 0 .2rem;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='14' viewBox='0 0 220 14'%3E%3Cpath d='M0 7H88M132 7H220' stroke='%23b8912f' stroke-width='1.5'/%3E%3Cpath d='M110 1 119 7 110 13 101 7Z' fill='%237a1f35' stroke='%23b8912f' stroke-width='1.2'/%3E%3Ccircle cx='94' cy='7' r='2.2' fill='%23b8912f'/%3E%3Ccircle cx='126' cy='7' r='2.2' fill='%23b8912f'/%3E%3C/svg%3E") no-repeat left center;background-size:220px 14px}
+/* top strip on the timer bar */
+html[lang][lang][lang] body .mbar{border-top:10px solid transparent!important;border-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10'%3E%3Crect width='24' height='10' fill='%237a1f35'/%3E%3Cpath d='M12 1.2 17.2 5 12 8.8 6.8 5Z' fill='%23e2c26b'/%3E%3Cpath d='M12 3.2 14.2 5 12 6.8 9.8 5Z' fill='%237a1f35'/%3E%3Ccircle cx='0' cy='5' r='1.6' fill='%23e2c26b'/%3E%3Ccircle cx='24' cy='5' r='1.6' fill='%23e2c26b'/%3E%3C/svg%3E") 10 0 0 0 round!important;border-image-width:10px 0 0 0!important}
+/* bottom menu (phone) */
+html[lang][lang][lang] body nav.nv{border-top:6px solid #7a1f35!important}
+/* sidebar (desktop): deep navy with gold text and an ornamental edge */
+@media(min-width:860px){
+ html[lang][lang][lang] body #side{background:#14213d!important;background-image:none!important;border-radius:0 0 14px 14px;padding:1rem .8rem 1.2rem!important;margin-right:12px;position:sticky;overflow:visible}
+ html[lang][lang][lang] body #side::after{content:"";position:absolute;top:0;bottom:0;right:-12px;width:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='24' viewBox='0 0 10 24'%3E%3Crect width='10' height='24' fill='%237a1f35'/%3E%3Cpath d='M1.2 12 5 6.8 8.8 12 5 17.2Z' fill='%23e2c26b'/%3E%3Cpath d='M3.2 12 5 9.8 6.8 12 5 14.2Z' fill='%237a1f35'/%3E%3Ccircle cx='5' cy='0' r='1.6' fill='%23e2c26b'/%3E%3Ccircle cx='5' cy='24' r='1.6' fill='%23e2c26b'/%3E%3C/svg%3E") repeat-y;background-size:10px 24px}
+ html[lang][lang][lang] body #side nav.nv{background:transparent!important;border:0!important}
+ html[lang][lang][lang] body #side nav.nv a{color:#f3eddc!important;border-radius:10px;font-weight:600}
+ html[lang][lang][lang] body #side nav.nv a *{color:#f3eddc!important;stroke:#f3eddc!important}
+ html[lang][lang][lang] body #side nav.nv a.on{background:#e2c26b!important;border:0!important}
+ html[lang][lang][lang] body #side nav.nv a.on,html[lang][lang][lang] body #side nav.nv a.on *{color:#14213d!important;stroke:#14213d!important}
+ html[lang][lang][lang] body #side .ub,html[lang][lang][lang] body #side .ub *{color:#f3eddc!important}
+ html[lang][lang][lang] body #side .ub button{background:transparent!important;border:1.5px solid #e2c26b!important;color:#e2c26b!important}
+}

@@ -1,0 +1,5 @@
+html body nav.nv a .ic{transition:transform .12s ease-out}
+html body nav.nv a:active .ic{transform:scale(.86)}
+html body nav.nv a.on .ic{animation:navpop .22s ease-out}
+@keyframes navpop{0%{transform:scale(.8)}60%{transform:scale(1.14)}100%{transform:scale(1)}}
+nav.nv .ic .ac{fill:currentColor;stroke:none}

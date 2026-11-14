@@ -1,0 +1,14 @@
+#boot{position:fixed;inset:0;z-index:2147483000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#fffdf9;color:#14213d;font-family:"Hind Siliguri","Noto Sans Bengali",system-ui,sans-serif;transition:opacity .35s ease}
+@media(prefers-color-scheme:dark){#boot{background:#0f1420;color:#f4efe3}}
+#boot.off{opacity:0;pointer-events:none}
+#boot b{font-size:30px;letter-spacing:.3px;font-weight:800}#boot b i{font-style:normal;color:#b8912f}
+#boot p{margin:0;font-size:15px;opacity:.75}
+#boot .sp{width:42px;height:42px;border-radius:50%;border:4px solid rgba(184,145,47,.25);border-top-color:#b8912f;animation:bootspin .8s linear infinite}
+@keyframes bootspin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){#boot .sp{animation-duration:2.4s}}
+.gtabs{display:flex;gap:.6rem;margin:1rem 0 .3rem;flex-wrap:wrap}
+.gtab{flex:1 1 0;min-width:96px;display:flex;flex-direction:column;align-items:center;gap:.1rem;padding:.7rem .6rem;border:2px solid var(--bd);border-radius:16px;background:var(--card);color:inherit;cursor:pointer;font:inherit}
+.gtab b{font-size:1.02rem;font-weight:800}.gtab small{font-size:.72rem;opacity:.7;letter-spacing:.04em}
+.gtab.on{background:linear-gradient(135deg,#1d4ed8,#3b82f6);border-color:transparent;color:#fff;box-shadow:0 10px 22px -12px #1d4ed8}.gtab.on small{opacity:.9}
+.gl-h{margin:1.1rem 0 .1rem;font-size:1.02rem;font-weight:800}.gl-h small{font-weight:600;opacity:.65;font-size:.78rem}
+@media(max-width:600px){.gtab{padding:.55rem .3rem}.gtab b{font-size:.92rem}}

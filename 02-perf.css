@@ -1,0 +1,24 @@
+/* speed patch: stop endless decorative animations and costly blur effects (functional timers/loaders are untouched) */
+.brand::after,.ban,.ban::after,.ban::before,.bar i::after,body.auth::before,body.auth::after,.sh-ic,.hb-art .orb,.hb-art .fl,.hb-art .tw,.md-art .hand,.md-art .bolt,.sj-ic svg,.md::after,.moti-e,.px-go::after,.hb h2 em,.hb-p::after,.hb-chips li,.bk>div::after,.qo,.mq2>div,.mq-r,.bdg>div:not(.lk) .bi,.gt-i .sn,.gt-i .ry,.gt-i .mn,.gt-i .st,.cs-art .bb,.cs-art .wg,.cs-art .fl,.cs-art .orb,.wz-go .p::after,.ab,.fc,.hx-bt span,.hx-h em,.hx-b,.pw-ic,.orb,.tw,.mg .md:first-child::before,.md .md-art,.sh::before,.sh::after,.sh .sh-ic,.authcard .unl,html[data-theme=dark] .brand,.fsc .fi{animation-play-state:paused!important}
+*,*::before,*::after{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.hx-bt{display:none!important}
+/* ===== perf: no heavy blur, calmer infinite motion (smooth on phones) ===== */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes hbIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+*,*::before,*::after{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+.brand::after,.ban,.ban::before,.ban::after,.sh-ic,.hb-art .orb,.hb-art .fl,.hb-art .tw,.md-art .hand,.md-art .bolt,.sj-ic svg,.md::after,.moti-e,.hb h2 em,.hb-chips li,.bk>div::after,.qo,.bdg>div:not(.lk) .bi,.gt-i .sn,.gt-i .ry,.gt-i .mn,.gt-i .st,.cs-art .bb,.cs-art .wg,.cs-art .fl,.cs-art .orb,.fc,.px-go::after,.wz-go .p::after,.hb-p::after{animation:none}
+.bar i{animation:grow .9s var(--ease)}
+.ban{animation-play-state:running!important}
+body.auth::before,body.auth::after{filter:blur(24px);animation:none}
+.wz-go,.hb .hb-k.gt{background-color:var(--card)}
+/* founder photo */
+.fnd .fpic{flex:none;width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:50% 35%;border:3px solid #f59e0b;box-shadow:0 0 0 5px rgba(245,158,11,.25),0 10px 24px -10px rgba(0,0,0,.45);background:#e8e4da}
+.fnd .frole{display:block;font-weight:700;font-size:.95rem;margin-top:.25rem;color:#b45309}
+html[data-theme=dark] .fnd .frole{color:#fcd34d}
+.flinks{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.7rem}
+.flinks a{display:inline-block;padding:.45rem .9rem;border-radius:99px;border:1px solid var(--bd);text-decoration:none;font-weight:700}
+html body .fnd p{color:var(--tx)!important}
+html body .fnd a{color:#b45309!important;font-weight:700}
+html[data-theme=dark] body .fnd a{color:#fcd34d!important}
+html body .fnd p.fsub{color:var(--mu)!important;margin-top:.4rem}
+@media(max-width:480px){.fnd .fpic{width:110px;height:110px}}
