@@ -1,0 +1,22 @@
+.mf-sq{display:inline-block;border-top:1.5px solid currentColor;padding:0 .12em;line-height:1.2}
+#mf-root .fm-f{white-space:normal;overflow-wrap:anywhere;font-size:1.25rem}
+#mf-root .fm-f .fr{white-space:nowrap}
+#mf-root .cs h3,#mf-root .cs p,#mf-root .cs small,#mf-root .cs .cs-go{color:#fff!important;-webkit-text-fill-color:#fff!important}
+#mf-root .cs{text-align:left;font:inherit;border:0;cursor:pointer;width:100%}
+#mf-root .mf-g{font-size:5.2rem;font-weight:800;color:#fff;opacity:.92;text-align:center;line-height:1;font-family:"Cambria Math","STIX Two Math",Georgia,serif}
+.mf-hero{background:linear-gradient(135deg,#0f766e,#2563eb 60%,#7c3aed)}
+.mf-home{background:linear-gradient(135deg,#0f766e,#2563eb 60%,#7c3aed)!important;box-shadow:0 16px 30px -18px #2563eb!important}
+.fs-tabs{display:flex;gap:.5rem;margin:0 0 1rem;position:sticky;top:0;z-index:6;padding:.4rem 0;background:var(--bg,#fff)}
+.fs-tabs button{flex:1;font:inherit;font-weight:800;padding:.7rem .8rem;border-radius:14px;border:2px solid var(--bd,#d9d9d9);background:var(--card,#fff);color:var(--tx,#111);cursor:pointer}
+.fs-tabs button.on{color:#fff;border-color:transparent;background:linear-gradient(135deg,#4f46e5,#c026d3)}
+.fs-tabs button[data-fs=math].on{background:linear-gradient(135deg,#0f766e,#2563eb)}
+.fs-h{margin:.2rem 0 .3rem}
+.fs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
+.fs-c{font:inherit;text-align:left;border:0;cursor:pointer;color:#fff!important;border-radius:22px;padding:1.3rem;display:flex;flex-direction:column;gap:.3rem;position:relative;overflow:hidden;box-shadow:0 14px 30px -18px rgba(0,0,0,.5);transition:transform .18s}
+.fs-c:hover{transform:translateY(-3px)}
+.fs-c *{color:#fff!important}
+.fs-p{background:linear-gradient(135deg,#4f46e5,#c026d3 60%,#f59e0b)}
+.fs-m{background:linear-gradient(135deg,#0f766e,#2563eb 60%,#7c3aed)}
+.fs-i{font-size:3rem;line-height:1;font-weight:800;opacity:.95}
+.fs-c b{font-size:1.3rem}.fs-c small{opacity:.9}.fs-c i{font-style:normal;font-weight:800;margin-top:.4rem}
+@media(max-width:560px){#mf-root .mf-g{font-size:3.6rem}#mf-root .fm-f{font-size:1.1rem}}

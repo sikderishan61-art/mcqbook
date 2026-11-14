@@ -1,0 +1,60 @@
+/* ===== Formula chapter: handwritten notebook look + hand-drawn graphics ===== */
+#fm-root,#mf-root,.fs-pick,.fs-tabs{--hw:'Caveat','Kalam','Segoe Print','Bradley Hand',cursive;--hwb:'Atma','Galada','Hind Siliguri',cursive}
+.fs-tabs button,.fs-c b{font-family:var(--hwb,'Atma','Galada',cursive);font-weight:700;letter-spacing:.01em}
+.fs-tabs button{display:flex;align-items:center;justify-content:center;gap:.45rem;border-radius:16px 22px 14px 20px / 20px 14px 22px 16px;border-width:2.5px;border-style:solid}
+.fx-ic{display:inline-block;width:1.5em;height:1.5em;flex:0 0 auto}.fx-ic svg{width:100%;height:100%;display:block;overflow:visible}
+.fs-c{border-radius:26px 18px 28px 16px / 18px 26px 16px 28px;border:3px dashed rgba(255,255,255,.65)!important;box-shadow:6px 8px 0 rgba(0,0,0,.16)}
+.fs-i{width:76px;height:76px;display:block;font-size:0}.fs-i svg{width:100%;height:100%;overflow:visible}
+.fs-c small{font-family:var(--hw,'Caveat',cursive);font-size:1.25rem;font-weight:500}
+.fs-h{font-family:var(--hwb);font-size:1.7rem}
+/* hero */
+#fm-root .fm-hero,#mf-root .fm-hero{border-radius:28px 20px 30px 18px / 20px 30px 18px 28px;border:3px dashed rgba(255,255,255,.7);outline:3px solid transparent;box-shadow:6px 8px 0 rgba(0,0,0,.14)}
+#fm-root .fm-hero h2,#mf-root .fm-hero h2{font-family:var(--hwb);font-size:2rem;font-weight:700}
+#fm-root .fm-hero small,#mf-root .fm-hero small{font-family:var(--hw);font-size:1.3rem;font-weight:700}
+.fm-hero .fm-sig{opacity:1!important;font-size:0!important;width:210px;height:100px;right:.6rem!important;top:.5rem!important}
+.fm-hero .fm-sig svg{width:100%;height:100%;overflow:visible;color:rgba(255,255,255,.55)}
+@media(max-width:560px){.fm-hero .fm-sig{width:120px;height:58px;opacity:.8}#fm-root .fm-hero h2,#mf-root .fm-hero h2{font-size:1.5rem}}
+/* chapter cards = sketchbook tiles */
+#fm-root .cs,#mf-root .cs{border-radius:24px 16px 26px 14px / 16px 26px 14px 24px;border:3px dashed rgba(255,255,255,.6);box-shadow:6px 8px 0 rgba(0,0,0,.16)}
+#fm-root .cs:nth-child(even),#mf-root .cs:nth-child(even){transform:rotate(.4deg)}
+#fm-root .cs:nth-child(odd),#mf-root .cs:nth-child(odd){transform:rotate(-.4deg)}
+#fm-root .cs:hover,#mf-root .cs:hover{transform:rotate(0) translateY(-3px)}
+#fm-root .cs h3,#mf-root .cs h3{font-family:var(--hwb);font-size:1.45rem;font-weight:700}
+#fm-root .cs small,#mf-root .cs small{font-family:var(--hw);font-size:1.15rem;font-weight:700;letter-spacing:0}
+#fm-root .cs .cs-go,#mf-root .cs .cs-go{font-family:var(--hw);font-size:1.15rem;border-style:dashed}
+#mf-root .mf-g{font-size:0!important;line-height:0}
+#mf-root .mf-g svg{width:100%;height:auto;display:block;overflow:visible}
+#mf-root .cs-art{background:rgba(255,255,255,.14);border-radius:18px 12px 20px 12px;padding:.35rem;border:2px dashed rgba(255,255,255,.55)}
+/* chapter heading */
+.fm-ch{font-family:var(--hwb);font-size:1.35rem;position:relative}
+.fm-ch::after{content:'';position:absolute;left:2.6rem;right:0;bottom:-.35rem;height:8px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' preserveAspectRatio='none'%3E%3Cpath d='M1 5C12 1 20 8 31 4S50 1 61 5 80 8 91 3s20 3 28 1' fill='none' stroke='%23f59e0b' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.fm-ch i{font-family:var(--hw);font-size:1.25rem;border-radius:55% 45% 50% 50%}
+/* formula cards = ruled notebook paper */
+.fm-g{gap:1.3rem}
+.fm-c{position:relative;border:2px solid #c9b98f;border-radius:6px 14px 8px 16px;padding:1.2rem 1rem 1rem 2.3rem;gap:.7rem;background-color:#fffdf3;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,rgba(96,140,200,.28) 27px,rgba(96,140,200,.28) 28px);color:#1f2937;box-shadow:4px 6px 0 rgba(120,90,20,.18);transition:transform .2s}
+.fm-c:nth-child(odd){transform:rotate(-.5deg)}.fm-c:nth-child(even){transform:rotate(.45deg)}.fm-c:hover{transform:rotate(0) translateY(-2px)}
+.fm-c::before{content:'';position:absolute;left:1.55rem;top:0;bottom:0;width:2px;background:rgba(225,29,72,.45)}
+.fm-c::after{content:'';position:absolute;top:-11px;left:50%;width:84px;height:22px;margin-left:-42px;background:rgba(251,191,36,.6);transform:rotate(-3deg);border-radius:2px;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.fm-n{font-family:var(--hwb);font-size:1.25rem;font-weight:700;color:#7c2d12;background:none}
+.fm-f{font-family:var(--hw),'Cambria Math','STIX Two Math',serif!important;font-weight:700;font-size:2.15rem!important;line-height:1.3!important;color:#1e3a8a!important;background:linear-gradient(transparent 62%,rgba(253,224,71,.65) 62%)!important;border-radius:4px!important;padding:.3rem .6rem!important;letter-spacing:.01em}
+#mf-root .fm-f{font-size:1.9rem!important}
+.fm-f sub,.fm-f sup{font-size:.6em}
+.fm-pop{font-family:var(--hw);font-size:1.15rem!important;font-weight:500;background:rgba(255,255,255,.6)!important;border:2px dashed #a78bfa!important;color:#4338ca!important;border-radius:10px 14px 10px 14px!important}
+.fm-pop.hit{background:#4f46e5!important;color:#fff!important;border:2px solid transparent!important}
+.fm-m{color:#1f2937}.fm-s{color:#374151}.fm-s b{font-family:var(--hw),'Cambria Math',serif;font-size:1.25rem;color:#1e3a8a}
+.fm-e{font-family:var(--hw);font-size:1.2rem;font-weight:500;line-height:1.45;border-left:0;border:2px dashed #f59e0b;border-radius:12px 8px 14px 8px;background:#fff7ed!important;color:#7c2d12}
+.fm-e b{font-family:var(--hwb);font-size:.95rem;font-weight:700}
+.fm-note{font-family:var(--hw);font-size:1.12rem;border:2px dashed #10b981}
+.fm-q{border-radius:16px 22px 14px 20px / 20px 14px 22px 16px;border-width:2.5px}
+/* home card */
+.fm-home{border-radius:26px 18px 28px 16px / 18px 26px 16px 28px!important;border:3px dashed rgba(255,255,255,.65)!important}
+.fm-home b{font-family:var(--hwb)!important;font-size:1.4rem!important}.fm-home small,.fm-home .fm-hd{font-family:var(--hw)!important;font-size:1.15rem!important}
+.fm-home .fm-hs{font-size:0!important;width:70px!important;height:70px!important}.fm-home .fm-hs svg{width:54px;height:54px;overflow:visible}
+/* dark mode = chalkboard */
+html[data-theme=dark] .fm-c{background-color:#1a2238;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 27px,rgba(147,197,253,.16) 27px,rgba(147,197,253,.16) 28px);border-color:#44507a;color:#e5e7eb;box-shadow:4px 6px 0 rgba(0,0,0,.4)}
+html[data-theme=dark] .fm-n{color:#fcd34d}html[data-theme=dark] .fm-f{color:#fef3c7!important;background:linear-gradient(transparent 62%,rgba(99,102,241,.5) 62%)!important}
+html[data-theme=dark] .fm-m,html[data-theme=dark] .fm-s{color:#d1d5db}html[data-theme=dark] .fm-s b{color:#fde68a}
+html[data-theme=dark] .fm-e{background:#3a2410!important;color:#fed7aa}
+html[data-theme=dark] .fm-pop{background:#1e2250!important;color:#c7d2fe!important}
+@media(max-width:560px){.fm-f{font-size:1.8rem!important}#mf-root .fm-f{font-size:1.6rem!important}}
+@media(prefers-reduced-motion:reduce){.fm-c,#fm-root .cs,#mf-root .cs{transition:none;transform:none!important}}

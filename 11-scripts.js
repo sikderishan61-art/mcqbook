@@ -1,0 +1,10 @@
+(function(){const h=document.documentElement,mk=()=>{if(document.querySelector('.ctl'))return;const c=document.createElement('div');c.className='ctl';
+const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></svg>',moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"/></svg>',fs='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+const tb=document.createElement('button');tb.type='button';const fb=document.createElement('button');fb.type='button';
+const rt=()=>{const d=h.getAttribute('data-theme')=='dark';tb.className='apq-th';tb.innerHTML='<i class="th-t"><b class="th-k">'+(d?moon:sun)+'</b></i>';tb.title=tb.ariaLabel=d?'লাইট মোডে যাও':'ডার্ক মোডে যাও';const m=document.querySelector('meta[name=theme-color]');if(m)m.content=d?'#0a0f1f':'#ffffff'};
+const isF=()=>document.fullscreenElement||document.webkitFullscreenElement,rf=()=>{fb.innerHTML=fs+'<span>'+(isF()?'ফুলস্ক্রিন বন্ধ':'ফুলস্ক্রিন')+'</span>';fb.title=fb.ariaLabel=isF()?'ফুলস্ক্রিন থেকে বের হও':'ফুলস্ক্রিনে দেখো'};
+tb.onclick=()=>{const n=h.getAttribute('data-theme')=='dark'?'light':'dark';h.setAttribute('data-theme',n);try{localStorage.setItem('mcqb_theme',n)}catch(e){}rt()};
+fb.onclick=()=>{try{if(isF()){(document.exitFullscreen||document.webkitExitFullscreen).call(document)}else{(h.requestFullscreen||h.webkitRequestFullscreen).call(h)}}catch(e){}};
+['fullscreenchange','webkitfullscreenchange'].forEach(ev=>document.addEventListener(ev,rf));
+rt();rf();c.appendChild(tb);document.body.appendChild(c)};
+if(document.body)mk();else document.addEventListener('DOMContentLoaded',mk)})();
